@@ -3,6 +3,22 @@
     <channel>
         <title>Lintel</title>
         <item>
+            <title>0.1.2</title>
+            <pubDate>Fri, 06 Nov 2026 21:54:04 +0545</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="plain-text"><![CDATA[Claude Code, clearer
+- The expanded island now shows Claude's last few steps on their own full-width lines, so nothing is cut off.
+- Each Claude session in the list names its project.
+- A Claude timer no longer keeps running after you interrupt Claude, or when a turn ends on an error. Lintel now tells you why it stopped, for example "rate limit reached".
+
+Lighter
+- The working spinner uses about a tenth of the CPU it did.
+]]></description>
+            <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.2/Lintel-0.1.2.zip" length="3594687" type="application/octet-stream" sparkle:edSignature="3JEeBCL0D7OgsW5ZpKqLh3i42jBTn/P2P1Ju/PnBikPW45jvNIqKdI8rBGvnWUVjY/OQGllNfNY/3oesDyn1Cg=="/>
+        </item>
+        <item>
             <title>0.1.1</title>
             <pubDate>Fri, 06 Nov 2026 16:39:10 +0545</pubDate>
             <sparkle:version>2</sparkle:version>
