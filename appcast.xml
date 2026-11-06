@@ -3,6 +3,23 @@
     <channel>
         <title>Lintel</title>
         <item>
+            <title>0.1.1</title>
+            <pubDate>Fri, 06 Nov 2026 16:39:10 +0545</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="plain-text"><![CDATA[Claude Code in the notch, and lighter on memory.
+
+- Claude Code status: while Claude Code works (Terminal, VS Code or the Claude app's Code tab), the island shows the project, the current step and the time so far, tells you when Claude needs your input, and says when it's done. It sets itself up automatically when Claude Code is installed; Lintel says so once, and you can turn it off with one click or in Settings.
+- Script notifications (lintel://notify) are about 10 times faster.
+- Fixed memory growth from frequent events, and at most 5 notifications now wait their turn, so a flood can't pile up.
+- The project folder is labelled clearly in Claude's status, and other small fixes.
+
+Not notarized yet: if macOS asks, open Lintel from System Settings › Privacy & Security › Open Anyway.
+]]></description>
+            <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.1/Lintel-0.1.1.zip" length="3569344" type="application/octet-stream" sparkle:edSignature="MMxfNIwC6PSEebJ5XeO8X5crhOThL9FAzdLy8g5eDYOF2zquBa87+tL/QBV4wSnrz289w0MSyDHQ+jTCRh0sAQ=="/>
+        </item>
+        <item>
             <title>0.1.0</title>
             <pubDate>Fri, 06 Nov 2026 13:16:53 +0545</pubDate>
             <sparkle:version>1</sparkle:version>
