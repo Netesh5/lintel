@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/lintel-icon.png">
-  <link rel="stylesheet" href="styles.css?v=21855eb">
+  <link rel="stylesheet" href="styles.css?v=dd5c03d">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -73,7 +73,7 @@
       <h1 class="reveal">Your notch,<br><span class="gradient-text">alive.</span></h1>
       <p class="lede reveal">Lintel turns the space around your Mac's camera into a living island. Timers, music, Claude Code, a drag-and-drop shelf with AirDrop and a quick note — right where you look.</p>
       <div class="cta reveal">
-        <a class="btn btn-primary btn-large" href="https://github.com/Netesh5/lintel/releases/latest" data-download>
+        <a class="btn btn-primary btn-large" href="https://github.com/Netesh5/lintel/releases/latest" data-download data-goatcounter-click="download-hero" data-goatcounter-title="Download (hero)">
           <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>
           Download for Mac
         </a>
@@ -291,7 +291,7 @@
       <div class="stats">
         <div class="stat reveal"><b data-count="0" data-suffix="%">0%</b><span>CPU when idle</span></div>
         <div class="stat reveal"><b data-count="22" data-suffix=" MB">22 MB</b><span>of memory at rest</span></div>
-        <div class="stat reveal"><b data-count="0" data-suffix="">0</b><span>trackers or analytics</span></div>
+        <div class="stat reveal"><b data-count="0" data-suffix="">0</b><span>trackers or analytics in the app</span></div>
         <div class="stat reveal"><b>Native</b><span>Swift, SwiftUI and AppKit</span></div>
       </div>
       <div class="bento small">
@@ -307,11 +307,16 @@
         <img src="assets/lintel-icon.png" alt="" width="96" height="96">
         <h2>Get Lintel</h2>
         <p class="muted">Free · <span data-version-full>Latest version</span> · macOS 14 or later</p>
-        <a class="btn btn-primary btn-large" href="https://github.com/Netesh5/lintel/releases/latest" data-download>
+        <a class="btn btn-primary btn-large" href="https://github.com/Netesh5/lintel/releases/latest" data-download data-goatcounter-click="download-card" data-goatcounter-title="Download (download section)">
           <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>
           Download for Mac
         </a>
         <p class="fineprint"><span data-size></span>Universal: Apple silicon and Intel. <a href="https://github.com/Netesh5/lintel/releases">All releases</a></p>
+        <div class="brew">
+          <span>Or with Homebrew</span>
+          <code id="brew-cmd">brew install --cask netesh5/tap/lintel</code>
+          <button class="copy" type="button" data-copy="#brew-cmd" data-goatcounter-click="copy-homebrew" data-goatcounter-title="Copy Homebrew command" aria-label="Copy the Homebrew command"><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg><span>Copy</span></button>
+        </div>
       </div>
 
       <div class="install" id="install">
@@ -335,9 +340,9 @@
       <details class="reveal"><summary>Is Lintel free?</summary><p>Yes. Download it, use it, and get every update.</p></details>
       <details class="reveal"><summary>My Mac doesn't have a notch. Does it work?</summary><p>Yes. On Macs and displays without a notch, Lintel floats as a small pill at the top centre of the screen, with the same activities.</p></details>
       <details class="reveal"><summary>Why does macOS warn me the first time?</summary><p>Apps from outside the App Store need Apple's notarization to open without a prompt. Lintel isn't notarized yet, so macOS asks you once. After you allow it, updates install without asking.</p></details>
-      <details class="reveal"><summary>What does Lintel see of my data?</summary><p>Only what a feature needs, and only after you turn it on. Calendar and Reminders stay on your Mac. Claude Code status sees the step Claude is on — never your prompts or file contents. There are no analytics.</p></details>
+      <details class="reveal"><summary>What does Lintel see of my data?</summary><p>Only what a feature needs, and only after you turn it on. Calendar and Reminders stay on your Mac. Claude Code status sees the step Claude is on — never your prompts or file contents. The app has no analytics. This website counts visits and download clicks with <a href="https://www.goatcounter.com">GoatCounter</a>, without cookies or anything that identifies you.</p></details>
       <details class="reveal"><summary>How do I connect Claude Code?</summary><p>Nothing to do: if Claude Code is installed, Lintel connects when it starts and tells you once. New Claude Code sessions appear in the island. Turn it off in Settings › Activities › Claude Code.</p></details>
-      <details class="reveal"><summary>How do I uninstall it?</summary><p>If you use Claude Code, first turn off Claude Code in Lintel's Settings so it removes its hook. Then quit Lintel from the menu bar and move it to the Trash.</p></details>
+      <details class="reveal"><summary>How do I uninstall it?</summary><p>If you use Claude Code, first turn off Claude Code in Lintel's Settings so it removes its hook. Then quit Lintel from the menu bar and move it to the Trash, or, if you installed it with Homebrew, run <code>brew uninstall --cask lintel</code>.</p></details>
     </section>
   </main>
 
@@ -347,6 +352,8 @@
     <p class="legal">Lintel is an independent app and isn't affiliated with or endorsed by Apple Inc. Mac, macOS, MacBook, AirDrop and Siri are trademarks of Apple Inc. Claude is a trademark of Anthropic.</p>
   </footer>
 
-  <script src="app.js?v=21855eb" defer></script>
+  <script src="app.js?v=dd5c03d" defer></script>
+  <!-- Visit counts without cookies or personal data: https://neteshpaudel.goatcounter.com -->
+  <script data-goatcounter="https://neteshpaudel.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

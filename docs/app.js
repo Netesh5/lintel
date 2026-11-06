@@ -241,6 +241,18 @@
     }, 2400);
   }
 
+  // ---- Copy buttons ----
+  $$("button[data-copy]").forEach((button) => {
+    const label = button.querySelector("span");
+    button.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText($(button.dataset.copy).textContent.trim());
+        label.textContent = "Copied";
+      } catch { label.textContent = "Select and copy"; }
+      setTimeout(() => { label.textContent = "Copy"; }, 1800);
+    });
+  });
+
   // ---- Latest release: direct download link, version and size ----
   fetch("https://api.github.com/repos/Netesh5/lintel/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
     .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
