@@ -64,7 +64,7 @@
   const island = $("#island"), caption = $("#stage-caption");
   const cIcon = $("#c-icon use"), cStatus = $("#c-status");
   const file = $("#dragged-file");
-  const steps = $("#claude-steps"), claudeStep = $("#claude-step"), claudeTime = $("#claude-time");
+  const steps = $("#claude-steps"), claudeTime = $("#claude-time");
   const noteText = $("#note-text");
 
   const setState = (state) => { island.dataset.state = state; };
@@ -75,6 +75,33 @@
     caption.style.opacity = 1;
   };
   const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+
+  // A Claude Code run, with the app's rules: the last three lines, finished steps first, then the
+  // step Claude is on, or what it's waiting for. A repeated step counts once.
+  const claudeRun = () => {
+    let history = [], step = null, waiting = false, message = "";
+    return {
+      tool(next) {
+        waiting = false;
+        if (next === step) return;
+        if (step) history = [...history, step].slice(-2);
+        step = next;
+      },
+      wait(text) { waiting = true; message = text; },
+      get waiting() { return waiting; },
+      lines() { return [...history, waiting ? message : (step || "Thinking…")].slice(-3); },
+    };
+  };
+  const renderSteps = (el, run, fresh) => {
+    const lines = run.lines();
+    el.innerHTML = lines.map((text, i) => {
+      const last = i === lines.length - 1;
+      const kind = !last ? "done" : run.waiting ? "wait" : "now";
+      const icon = { done: "#i-tick", now: "#i-spin", wait: "#i-alert" }[kind];
+      return `<div class="${kind}${last && fresh ? " fresh" : ""}"><svg class="ico"><use href="${icon}"/></svg><span>${text}</span></div>`;
+    }).join("");
+    return lines.length;
+  };
 
   let visible = true, running = false;
   const waitVisible = async () => { while (!visible || document.hidden) await sleep(300); };
@@ -131,24 +158,17 @@
       setState("claude-compact");
       say("Claude Code is working. You don't have to watch it.");
       await hold(1800, 1000, () => { cStatus.textContent = fmt(t++); });
-      steps.innerHTML = "";
+      const run = claudeRun();
+      claudeTime.textContent = fmt(t);
+      island.dataset.rows = renderSteps(steps, run, true);
       setState("claude");
-      const flow = [
-        ["Reading NotesModule.swift", "Read NotesModule.swift"],
-        ["Editing NotesModule.swift", "Edited NotesModule.swift"],
-        ["Run the unit tests", "Ran the unit tests"],
-      ];
-      for (const [doing, done] of flow) {
-        claudeStep.textContent = `${doing} · in lintel`;
-        const row = document.createElement("div");
-        row.className = "now";
-        row.innerHTML = `<svg class="ico"><use href="#i-update"/></svg><span>${doing}</span>`;
-        steps.append(row);
-        await hold(1300, 1000, () => { claudeTime.textContent = fmt(t++); });
-        row.className = "";
-        row.innerHTML = `<svg class="ico"><use href="#i-check"/></svg><span>${done}</span>`;
+      await hold(1000, 1000, () => { claudeTime.textContent = fmt(t++); });
+      for (const step of ["Reading NotesModule.swift", "Editing NotesModule.swift", "Run the unit tests"]) {
+        run.tool(step);
+        island.dataset.rows = renderSteps(steps, run, true);   // the island grows a row at a time
+        await hold(1400, 1000, () => { claudeTime.textContent = fmt(t++); });
       }
-      await sleep(400);
+      await sleep(200);
       $("#banner-title").textContent = "Claude finished in 3m 12s";
       $("#banner-sub").textContent = "lintel";
       setState("banner");
@@ -192,27 +212,33 @@
     tour();
   }
 
-  // ---- Claude spotlight: steps tick by ----
-  const dcStep = $("#dc-step"), dcTime = $("#dc-time"), dcTitle = $("#dc-title");
-  const dcSteps = [
-    ["Claude is working", "Editing ClaudeStatusModule.swift · in lintel"],
-    ["Claude is working", "Run the unit tests · in lintel"],
-    ["Claude needs you", "In lintel"],
-    ["Claude is working", "Committing the changes · in lintel"],
+  // ---- Claude spotlight: a run that keeps going, always three rows ----
+  const dcSteps = $("#dc-steps"), dcTime = $("#dc-time"), dcIcon = $("#dc-icon");
+  const dcRun = claudeRun();
+  ["Reading ClaudeSection.swift", "Editing ClaudeSection.swift", "Run the unit tests"].forEach((s) => dcRun.tool(s));
+  const dcEvents = [
+    ["wait", "Claude needs your permission to use Bash"],
+    ["tool", "Run the unit tests"],
+    ["tool", "Reading app.js"],
+    ["tool", "Editing app.js"],
+    ["tool", "Searching the code"],
+    ["tool", "Committing the changes"],
+    ["tool", "Reading ClaudeSection.swift"],
+    ["tool", "Editing ClaudeSection.swift"],
+    ["tool", "Run the unit tests"],
   ];
   let dcIndex = 0, dcSeconds = 108;
   if (!reduceMotion) {
     setInterval(() => { dcTime.textContent = fmt(++dcSeconds); }, 1000);
     setInterval(() => {
-      dcIndex = (dcIndex + 1) % dcSteps.length;
-      dcStep.style.opacity = 0;
-      setTimeout(() => {
-        const [title, step] = dcSteps[dcIndex];
-        dcTitle.textContent = title;
-        dcStep.textContent = step;
-        dcStep.style.opacity = 1;
-      }, 300);
-    }, 2600);
+      if (document.hidden) return;
+      const [kind, text] = dcEvents[dcIndex];
+      dcIndex = (dcIndex + 1) % dcEvents.length;
+      if (kind === "wait") dcRun.wait(text); else dcRun.tool(text);
+      dcIcon.className = `b-icon ${dcRun.waiting ? "wait" : "claude"}`;
+      dcIcon.querySelector("use").setAttribute("href", dcRun.waiting ? "#i-alert" : "#i-sparkle");
+      renderSteps(dcSteps, dcRun, true);
+    }, 2400);
   }
 
   // ---- Latest release: direct download link, version and size ----

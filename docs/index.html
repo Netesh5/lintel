@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/lintel-icon.png">
-  <link rel="stylesheet" href="styles.css?v=839cc2f">
+  <link rel="stylesheet" href="styles.css?v=21855eb">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -36,6 +36,9 @@
       <symbol id="i-command" viewBox="0 0 24 24"><path d="M9 9V6.5A2.5 2.5 0 1 0 6.5 9H9zm0 0h6m-6 0v6m6-6V6.5A2.5 2.5 0 1 1 17.5 9H15zm0 0v6m0 0h-6m6 0v2.5a2.5 2.5 0 1 0 2.5-2.5H15zm-6 0v2.5A2.5 2.5 0 1 1 6.5 15H9z"/></symbol>
       <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.4 3 8 7 9.5 4-1.5 7-5.1 7-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
       <symbol id="i-feather" viewBox="0 0 24 24"><path d="M19.5 4.5c-6 0-11.5 4-12.5 11l-3 4.5M7.5 14.5H13M9.5 10.5h6.5c.8-2 1.6-4 3.5-6"/></symbol>
+      <symbol id="i-tick" viewBox="0 0 24 24"><path d="m5.5 12.5 4.2 4.2 8.8-9.4"/></symbol>
+      <symbol id="i-spin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5" stroke-dasharray="36 11.2"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.8v5.2M12 16.3v.1"/></symbol>
       <symbol id="i-update" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.5 4v4.5H15"/></symbol>
       <symbol id="i-display" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8.5 20.5h7M12 17v3.5"/><rect x="9.5" y="4" width="5" height="1.6" rx=".8"/></symbol>
       <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.6"/><path d="M5 8.5h14M12 8.5v5M12 13.5l-3.5 7M12 13.5l3.5 7"/></symbol>
@@ -106,7 +109,7 @@
 
             <!-- claude expanded -->
             <div class="i-panel p-claude">
-              <div class="band"><span class="b-icon claude"><svg class="ico"><use href="#i-sparkle"/></svg></span><div><b>Claude is working</b><span id="claude-step">Reading NotesModule.swift · in lintel</span></div><em id="claude-time">0:12</em></div>
+              <div class="band"><span class="b-icon claude"><svg class="ico"><use href="#i-sparkle"/></svg></span><div><b>Claude</b><span>lintel</span></div><em id="claude-time">0:12</em></div>
               <div class="steps" id="claude-steps"></div>
             </div>
 
@@ -213,7 +216,7 @@
       <div class="spot-text">
         <p class="eyebrow reveal">Claude Code</p>
         <h2 class="reveal">Keep working.<br><span class="gradient-text warm">Claude keeps you posted.</span></h2>
-        <p class="reveal">While Claude Code works — in Terminal, VS Code or the Claude app — the island shows the project, the step it's on and the time so far. It tells you the moment Claude needs your input, and when it's done.</p>
+        <p class="reveal">While Claude Code works — in Terminal, VS Code or the Claude app — the island shows the project, the step it's on, the steps just done and the time so far. It tells you the moment Claude needs your input, and when it's done.</p>
         <ul class="ticks reveal">
           <li>Sets itself up when Claude Code is installed. One switch to turn it off.</li>
           <li>One island per session, up to four at once.</li>
@@ -235,7 +238,12 @@
         </div>
         <div class="demo-notch"></div>
         <div class="demo-island" id="demo-claude">
-          <div class="band"><span class="b-icon claude"><svg class="ico"><use href="#i-sparkle"/></svg></span><div><b id="dc-title">Claude is working</b><span id="dc-step">Editing ClaudeStatusModule.swift · in lintel</span></div><em id="dc-time">1:48</em></div>
+          <div class="band"><span class="b-icon claude" id="dc-icon"><svg class="ico"><use href="#i-sparkle"/></svg></span><div><b>Claude</b><span>lintel</span></div><em id="dc-time">1:48</em></div>
+          <div class="steps" id="dc-steps" aria-label="Claude's steps">
+            <div class="done"><svg class="ico"><use href="#i-tick"/></svg><span>Reading ClaudeSection.swift</span></div>
+            <div class="done"><svg class="ico"><use href="#i-tick"/></svg><span>Editing ClaudeSection.swift</span></div>
+            <div class="now"><svg class="ico"><use href="#i-spin"/></svg><span>Run the unit tests</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -339,6 +347,6 @@
     <p class="legal">Lintel is an independent app and isn't affiliated with or endorsed by Apple Inc. Mac, macOS, MacBook, AirDrop and Siri are trademarks of Apple Inc. Claude is a trademark of Anthropic.</p>
   </footer>
 
-  <script src="app.js?v=839cc2f" defer></script>
+  <script src="app.js?v=21855eb" defer></script>
 </body>
 </html>

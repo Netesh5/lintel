@@ -167,7 +167,9 @@ h1 {
 }
 .island[data-state="timer"], .island[data-state="claude-compact"], .island[data-state="shelf-compact"] { --iw: 330px; --ih: 34px; --ir: 13px; }
 .island[data-state="music"] { --iw: 470px; --ih: 172px; --ir: 34px; }
-.island[data-state="claude"] { --iw: 470px; --ih: 168px; --ir: 34px; }
+.island[data-state="claude"] { --iw: 470px; --ih: 96px; --ir: 30px; }
+.island[data-state="claude"][data-rows="2"] { --ih: 122px; --ir: 32px; }
+.island[data-state="claude"][data-rows="3"] { --ih: 148px; --ir: 34px; }
 .island[data-state="banner"] { --iw: 430px; --ih: 108px; --ir: 32px; }
 .island[data-state="drop"] { --iw: 520px; --ih: 148px; --ir: 34px; }
 .island[data-state="note"] { --iw: 470px; --ih: 176px; --ir: 34px; }
@@ -217,10 +219,16 @@ h1 {
 .controls .ico { width: 18px; height: 18px; }
 .controls .play { width: 34px; height: 34px; border-radius: 50%; background: #ff7aa2; color: #000; display: grid; place-items: center; }
 
-.steps { margin: 12px 4px 0; display: grid; gap: 7px; }
-.steps div { display: flex; align-items: center; gap: 9px; font-size: 12px; color: rgba(255, 255, 255, 0.72); animation: stepIn 0.55s var(--spring) both; }
-.steps div .ico { width: 14px; height: 14px; color: var(--green); }
-.steps div.now .ico { color: #ff9f6e; animation: spin 1.2s linear infinite; }
+/* Claude's steps, as the app shows them: finished ones dimmed with a tick, then the current one. */
+.steps { margin: 12px 4px 0; display: grid; gap: 4px; }
+.steps div { display: flex; align-items: center; gap: 11px; height: 22px; font-size: 12.5px; color: rgba(255, 255, 255, 0.5); transition: color 0.3s; }
+.steps div span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.steps div .ico { width: 14px; height: 14px; flex: none; color: rgba(48, 209, 88, 0.85); stroke-width: 2.4; }
+.steps div.now, .steps div.wait { color: #fff; font-weight: 500; }
+.steps div.now .ico { color: #ff9f6e; animation: spin 0.9s linear infinite; }
+.steps div.wait .ico { color: var(--yellow); }
+.steps div.fresh { animation: stepIn 0.55s var(--spring) both; }
+.b-icon.wait { background: rgba(255, 214, 10, 0.16); color: var(--yellow); }
 @keyframes stepIn { from { opacity: 0; transform: translateY(8px); } }
 @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -328,7 +336,6 @@ h3 { margin: 12px 0 8px; font-size: 24px; line-height: 1.15; letter-spacing: -0.
 }
 .demo-island.wide { width: min(460px, 92%); padding: 34px 16px 16px; }
 .demo-island .band { margin: 0; }
-#dc-step { transition: opacity 0.3s; }
 .tiles { display: flex; gap: 10px; justify-content: center; }
 .tile { position: relative; width: 80px; display: grid; justify-items: center; gap: 6px; font-size: 11px; color: rgba(255, 255, 255, 0.8); animation: tileIn 0.7s var(--spring) both; }
 .tile:nth-child(2) { animation-delay: 0.08s; } .tile:nth-child(3) { animation-delay: 0.16s; } .tile:nth-child(4) { animation-delay: 0.24s; }
