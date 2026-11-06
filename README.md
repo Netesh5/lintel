@@ -1,5 +1,7 @@
 # Lintel
 
+**Website: [netesh5.github.io/lintel](https://netesh5.github.io/lintel/)**
+
 Live activities around your Mac's notch: timers, music, downloads, charging, a drag-and-drop
 shelf with AirDrop, a quick note (⌃⌥N), countdowns, reminders and more.
 
