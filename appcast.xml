@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Lintel</title>
+        <item>
+            <title>0.1.0</title>
+            <pubDate>Fri, 06 Nov 2026 13:16:53 +0545</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="plain-text"><![CDATA[First public release of Lintel: live activities around your Mac's notch.
+
+- Live activities beside the notch: timers and stopwatches, Pomodoro focus, Now Playing for Music and Spotify, charging and battery, downloads, volume, calendar meetings, countdowns to a date, reminders.
+- A drag-and-drop shelf on the notch, with AirDrop, Quick Look, compress, convert, resize, combine into PDF, pinning, search and multi-select.
+- A quick note anywhere with Control-Option-N.
+- Network, VPN, Low Power Mode, unlock and Bluetooth notices.
+- Siri, Shortcuts and Spotlight actions, and a lintel:// URL scheme for scripts.
+- Updates itself.
+
+Not notarized yet: the first time, right-click Lintel.app and choose Open.
+]]></description>
+            <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.0/Lintel-0.1.0.zip" length="3474353" type="application/octet-stream" sparkle:edSignature="dbk8OlwJh+K48ZXzmKsKdUn2g6ImpJJpijGwkSLycF+KWFB8nLr7EjgHHXo5izhNd+l+KBr4JP+9b9ROP7VWBQ=="/>
+        </item>
+    </channel>
+</rss>
