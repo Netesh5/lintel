@@ -10,9 +10,10 @@ This repository hosts **downloads and update feed only**.
 1. Download the latest `Lintel-<version>.zip` from [Releases](https://github.com/Netesh5/lintel/releases/latest)
    and unzip it.
 2. Move **Lintel.app** to your Applications folder.
-3. The first time, **right-click Lintel.app › Open**, then click **Open**. Current builds aren't
-   notarized by Apple yet, so macOS asks once. (Or open it, then allow it under System Settings ›
-   Privacy & Security.)
+3. Open it. Current builds aren't notarized by Apple yet, so the first time macOS says it can't
+   verify Lintel. Click **Done**, then go to **System Settings › Privacy & Security**, scroll down
+   and click **Open Anyway** next to "Lintel was blocked", and confirm. (On macOS 14 you can instead
+   right-click Lintel.app › Open.) You only do this once; updates install without asking.
 
 Lintel lives in the menu bar (the capsule icon) and updates itself.
 
