@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lintel — Live activities around your Mac's notch</title>
+  <meta name="description" content="Lintel turns your Mac's notch into a living island: timers, music, Claude Code, a drag-and-drop shelf with AirDrop, quick notes, countdowns and more. Free for macOS 14 and later.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Lintel — Live activities around your Mac's notch">
+  <meta property="og:description" content="Timers, music, Claude Code, a drag-and-drop shelf with AirDrop, quick notes and more, right where you look.">
+  <meta property="og:image" content="assets/lintel-icon.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/lintel-icon.png">
+  <link rel="stylesheet" href="styles.css?v=839cc2f">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V9.5M9.5 3h5M18.5 6.5l1.5-1.5"/></symbol>
+      <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5.5l11-2v12.5"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol>
+      <symbol id="i-tray" viewBox="0 0 24 24"><path d="M3.5 13.5 6 5h12l2.5 8.5"/><path d="M3.5 13.5H8l1.5 2.5h5l1.5-2.5h4.5V19a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 19z"/></symbol>
+      <symbol id="i-airdrop" viewBox="0 0 24 24"><circle cx="12" cy="13" r="1.6"/><path d="M8.5 16.5a5 5 0 1 1 7 0M5.6 19.2a9 9 0 1 1 12.8 0"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3.5 12.9 9l5.6 1.9-5.6 1.9L11 18.5l-1.9-5.7-5.6-1.9L9.1 9z"/><path d="M18.5 3.5v3M17 5h3"/></symbol>
+      <symbol id="i-note" viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="15" height="17" rx="2.5"/><path d="M8 8.5h8M8 12h8M8 15.5h5"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></symbol>
+      <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M6.5 3.5h11M6.5 20.5h11M7.5 3.5c0 5 9 5.5 9 8.5s-9 3.5-9 8.5M16.5 3.5c0 5-9 5.5-9 8.5s9 3.5 9 8.5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m8.3 12.2 2.5 2.5 5-5.2"/></symbol>
+      <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2.5" y="7.5" width="17" height="9" rx="2.5"/><path d="M22 11v2"/><path d="m11.5 9-2 3.2h3l-2 3"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v8M8.5 12.5 12 16l3.5-3.5"/></symbol>
+      <symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6.5 9H3.5v6h3L11 19z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18.3 6.3a8 8 0 0 1 0 11.4"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="13" height="11" rx="2.5"/><path d="m15.5 10.5 6-3v9l-6-3"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+      <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.8 9.2a13 13 0 0 1 18.4 0M5.9 12.4a8.6 8.6 0 0 1 12.2 0M9 15.6a4.2 4.2 0 0 1 6 0"/><circle cx="12" cy="18.7" r=".9"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2.5"/><path d="M9 4.5V3.5h6v1M8.5 10h7M8.5 13.5h7M8.5 17h4"/></symbol>
+      <symbol id="i-command" viewBox="0 0 24 24"><path d="M9 9V6.5A2.5 2.5 0 1 0 6.5 9H9zm0 0h6m-6 0v6m6-6V6.5A2.5 2.5 0 1 1 17.5 9H15zm0 0v6m0 0h-6m6 0v2.5a2.5 2.5 0 1 0 2.5-2.5H15zm-6 0v2.5A2.5 2.5 0 1 1 6.5 15H9z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.4 3 8 7 9.5 4-1.5 7-5.1 7-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+      <symbol id="i-feather" viewBox="0 0 24 24"><path d="M19.5 4.5c-6 0-11.5 4-12.5 11l-3 4.5M7.5 14.5H13M9.5 10.5h6.5c.8-2 1.6-4 3.5-6"/></symbol>
+      <symbol id="i-update" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.5 4v4.5H15"/></symbol>
+      <symbol id="i-display" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8.5 20.5h7M12 17v3.5"/><rect x="9.5" y="4" width="5" height="1.6" rx=".8"/></symbol>
+      <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.6"/><path d="M5 8.5h14M12 8.5v5M12 13.5l-3.5 7M12 13.5l3.5 7"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><rect x="7" y="5.5" width="3.5" height="13" rx="1" fill="currentColor" stroke="none"/><rect x="13.5" y="5.5" width="3.5" height="13" rx="1" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-next" viewBox="0 0 24 24"><path d="M5 6v12l7.5-6zM12.5 6v12l7.5-6z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-prev" viewBox="0 0 24 24"><path d="M19 6v12l-7.5-6zM11.5 6v12L4 12z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M6.5 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9.5A1.5 1.5 0 0 1 5 19V5a1.5 1.5 0 0 1 1.5-1.5z"/><path d="M13.5 3.5v4h4"/></symbol>
+      <symbol id="i-apple-chip" viewBox="0 0 24 24"><rect x="5.5" y="5.5" width="13" height="13" rx="2.5"/><path d="M9 2.5v3M15 2.5v3M9 18.5v3M15 18.5v3M2.5 9h3M2.5 15h3M18.5 9h3M18.5 15h3"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Lintel home">
+      <img src="assets/lintel-icon.png" alt="" width="28" height="28">
+      <span>Lintel</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#features">Features</a>
+      <a href="#claude">Claude Code</a>
+      <a href="#shelf">Shelf</a>
+      <a href="#install">Install</a>
+    </nav>
+    <a class="btn btn-small btn-primary" href="#download" data-download>Download</a>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <img class="hero-icon reveal" src="assets/lintel-icon.png" alt="Lintel app icon" width="112" height="112">
+      <h1 class="reveal">Your notch,<br><span class="gradient-text">alive.</span></h1>
+      <p class="lede reveal">Lintel turns the space around your Mac's camera into a living island. Timers, music, Claude Code, a drag-and-drop shelf with AirDrop and a quick note — right where you look.</p>
+      <div class="cta reveal">
+        <a class="btn btn-primary btn-large" href="https://github.com/Netesh5/lintel/releases/latest" data-download>
+          <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>
+          Download for Mac
+        </a>
+        <a class="btn btn-ghost btn-large" href="#features">See what it does</a>
+      </div>
+      <p class="meta reveal"><span data-version>Free</span> · macOS 14 Sonoma or later · Apple silicon and Intel</p>
+
+      <div class="stage reveal" id="stage" aria-label="Animated demo of Lintel around a MacBook notch">
+        <div class="screen" id="screen">
+          <div class="wallpaper" aria-hidden="true"></div>
+          <div class="menubar" aria-hidden="true">
+            <div class="menubar-left"><span class="mb-apple"></span><b>Lintel</b><span>File</span><span>Edit</span><span>View</span><span>Window</span></div>
+            <div class="menubar-right"><span class="mb-capsule"></span><svg class="mb-ico"><use href="#i-wifi"/></svg><span class="mb-batt"></span><span id="clock">9:41</span></div>
+          </div>
+
+          <!-- The island -->
+          <div class="island" id="island" data-state="idle" role="img" aria-label="Lintel's island">
+            <!-- compact: left icon + right status -->
+            <div class="i-compact">
+              <span class="c-left"><svg class="ico" id="c-icon"><use href="#i-timer"/></svg></span>
+              <span class="c-right" id="c-status">4:59</span>
+            </div>
+
+            <!-- music expanded -->
+            <div class="i-panel p-music">
+              <div class="band"><div><b>Midnight Drive</b><span>Aurora Lane — Neon Hours</span></div></div>
+              <div class="music-row">
+                <div class="art" aria-hidden="true"></div>
+                <div class="progress"><div class="bar"><i></i></div><div class="times"><span>1:24</span><span>-2:31</span></div></div>
+              </div>
+              <div class="controls"><svg class="ico"><use href="#i-prev"/></svg><span class="play"><svg class="ico"><use href="#i-pause"/></svg></span><svg class="ico"><use href="#i-next"/></svg></div>
+            </div>
+
+            <!-- claude expanded -->
+            <div class="i-panel p-claude">
+              <div class="band"><span class="b-icon claude"><svg class="ico"><use href="#i-sparkle"/></svg></span><div><b>Claude is working</b><span id="claude-step">Reading NotesModule.swift · in lintel</span></div><em id="claude-time">0:12</em></div>
+              <div class="steps" id="claude-steps"></div>
+            </div>
+
+            <!-- banner -->
+            <div class="i-panel p-banner">
+              <div class="band"><span class="b-icon done"><svg class="ico"><use href="#i-check"/></svg></span></div>
+              <b id="banner-title">Claude finished in 3m 12s</b>
+              <span id="banner-sub">lintel</span>
+            </div>
+
+            <!-- shelf drop zone -->
+            <div class="i-panel p-drop">
+              <div class="drop-tile keep"><svg class="ico"><use href="#i-tray"/></svg><b>Keep on Shelf</b><span>Drag it out later</span></div>
+              <div class="drop-tile air"><svg class="ico"><use href="#i-airdrop"/></svg><b>AirDrop</b><span>Send to a nearby device</span></div>
+            </div>
+
+            <!-- note -->
+            <div class="i-panel p-note">
+              <div class="band"><span class="b-icon note"><svg class="ico"><use href="#i-note"/></svg></span><div><b>Quick Note</b><span>⌃⌥N from any app</span></div></div>
+              <div class="editor"><span id="note-text"></span><i class="caret"></i></div>
+            </div>
+          </div>
+
+          <!-- a file being dragged to the notch -->
+          <div class="dragged-file" id="dragged-file" aria-hidden="true"><svg class="ico"><use href="#i-file"/></svg><span>Design.pdf</span></div>
+          <div class="cursor" id="cursor" aria-hidden="true"></div>
+        </div>
+        <p class="stage-caption" id="stage-caption">A timer, counting down beside the camera.</p>
+      </div>
+    </section>
+
+    <!-- Features bento -->
+    <section class="section" id="features">
+      <p class="eyebrow reveal">Features</p>
+      <h2 class="reveal">Everything you glance at.<br><span class="muted">Nothing you have to look for.</span></h2>
+
+      <div class="bento">
+        <article class="card c-wide reveal">
+          <div class="card-text">
+            <span class="tag orange"><svg class="ico"><use href="#i-timer"/></svg>Live activities</span>
+            <h3>Timers, stopwatches and focus sessions.</h3>
+            <p>Start a timer of any length from the menu bar, Siri or Shortcuts — "25", "1:30" or "1h 15m". Pomodoro rounds with breaks. Banners and a chime when time's up.</p>
+          </div>
+          <div class="mini-island mi-timer" aria-hidden="true"><span class="ring"></span><span class="mi-time">24:59</span></div>
+        </article>
+
+        <article class="card reveal">
+          <span class="tag pink"><svg class="ico"><use href="#i-music"/></svg>Now Playing</span>
+          <h3>Music and Spotify, at the notch.</h3>
+          <p>Artwork, a live waveform, elapsed and remaining time, and play, pause, next and previous. The island takes on the album's colour.</p>
+          <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </article>
+
+        <article class="card reveal">
+          <span class="tag blue"><svg class="ico"><use href="#i-tray"/></svg>Shelf</span>
+          <h3>Drop anything on the notch.</h3>
+          <p>Files, folders, images, links or text. Keep them, then drag them out into any app. Or drop on the right to send with AirDrop.</p>
+        </article>
+
+        <article class="card c-tall reveal">
+          <span class="tag yellow"><svg class="ico"><use href="#i-note"/></svg>Quick Note</span>
+          <h3>A scratchpad, one shortcut away.</h3>
+          <p>Press <kbd>⌃</kbd><kbd>⌥</kbd><kbd>N</kbd> in any app and type. It saves itself, and its first line waits beside the notch.</p>
+          <div class="mini-note" aria-hidden="true"><b>Groceries for Friday</b><span>Oat milk, basil, lemons…</span></div>
+        </article>
+
+        <article class="card reveal">
+          <span class="tag purple"><svg class="ico"><use href="#i-hourglass"/></svg>Countdowns</span>
+          <h3>Days until anything.</h3>
+          <p>"Trip in 3 days." Whole days until the last one, then a live countdown, then a banner when it's here.</p>
+          <div class="days" aria-hidden="true"><b>3</b><span>days</span></div>
+        </article>
+
+        <article class="card reveal">
+          <span class="tag teal"><svg class="ico"><use href="#i-calendar"/></svg>Calendar</span>
+          <h3>Never late to a call.</h3>
+          <p>Your next meeting appears ten minutes before, with a countdown and a Join button for Zoom, Meet, Teams, Webex and FaceTime.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="tag green"><svg class="ico"><use href="#i-check"/></svg>Reminders</span>
+          <h3>Today's list, ticked off.</h3>
+          <p>Due and overdue reminders with checkboxes that complete them in Reminders.</p>
+        </article>
+      </div>
+
+      <div class="chips reveal" aria-label="More features">
+        <span class="chip"><svg class="ico"><use href="#i-battery"/></svg>Charging &amp; battery</span>
+        <span class="chip"><svg class="ico"><use href="#i-download"/></svg>Download progress</span>
+        <span class="chip"><svg class="ico"><use href="#i-speaker"/></svg>Volume &amp; AirPods</span>
+        <span class="chip"><svg class="ico"><use href="#i-camera"/></svg>Camera mirror</span>
+        <span class="chip"><svg class="ico"><use href="#i-wifi"/></svg>Network &amp; VPN</span>
+        <span class="chip"><svg class="ico"><use href="#i-bell"/></svg>Notifications</span>
+        <span class="chip"><svg class="ico"><use href="#i-clipboard"/></svg>Clipboard</span>
+        <span class="chip"><svg class="ico"><use href="#i-command"/></svg>Siri &amp; Shortcuts</span>
+        <span class="chip"><svg class="ico"><use href="#i-display"/></svg>Works without a notch</span>
+        <span class="chip"><svg class="ico"><use href="#i-access"/></svg>VoiceOver &amp; Reduce Motion</span>
+        <span class="chip"><svg class="ico"><use href="#i-update"/></svg>Updates itself</span>
+      </div>
+    </section>
+
+    <!-- Claude spotlight -->
+    <section class="section spotlight" id="claude">
+      <div class="spot-text">
+        <p class="eyebrow reveal">Claude Code</p>
+        <h2 class="reveal">Keep working.<br><span class="gradient-text warm">Claude keeps you posted.</span></h2>
+        <p class="reveal">While Claude Code works — in Terminal, VS Code or the Claude app — the island shows the project, the step it's on and the time so far. It tells you the moment Claude needs your input, and when it's done.</p>
+        <ul class="ticks reveal">
+          <li>Sets itself up when Claude Code is installed. One switch to turn it off.</li>
+          <li>One island per session, up to four at once.</li>
+          <li>Never sees your prompts or files — only the step, like "Editing App.swift".</li>
+        </ul>
+      </div>
+      <div class="spot-demo reveal" aria-hidden="true">
+        <div class="mock-window editor-window">
+          <div class="mw-bar"><i></i><i></i><i></i><span>ClaudeStatusModule.swift</span></div>
+          <div class="code">
+            <p><em>func</em> handle(_ event: ClaudeHookEvent) {</p>
+            <p class="in1"><em>switch</em> event.kind {</p>
+            <p class="in2"><em>case</em> .prompt: begin(event)</p>
+            <p class="in2"><em>case</em> .tool: show(event.session)</p>
+            <p class="in2 typing"><em>case</em> .stop: finish(event)</p>
+            <p class="in1">}</p>
+            <p>}</p>
+          </div>
+        </div>
+        <div class="demo-notch"></div>
+        <div class="demo-island" id="demo-claude">
+          <div class="band"><span class="b-icon claude"><svg class="ico"><use href="#i-sparkle"/></svg></span><div><b id="dc-title">Claude is working</b><span id="dc-step">Editing ClaudeStatusModule.swift · in lintel</span></div><em id="dc-time">1:48</em></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shelf spotlight -->
+    <section class="section spotlight reverse" id="shelf">
+      <div class="spot-text">
+        <p class="eyebrow reveal">The shelf</p>
+        <h2 class="reveal">Drag. Drop.<br><span class="gradient-text cool">Send it anywhere.</span></h2>
+        <p class="reveal">Drag something toward the notch and it opens into a drop zone. Keep it on the shelf for later, or drop it on AirDrop to send it to a nearby iPhone or Mac.</p>
+        <ul class="ticks reveal">
+          <li>Quick Look, compress, convert to JPEG, PNG or HEIC, resize, combine into a PDF.</li>
+          <li>Pin what you need, search when it fills up, ⌘-click to act on several.</li>
+          <li>Your originals are never touched.</li>
+        </ul>
+      </div>
+      <div class="spot-demo shelf-demo reveal" aria-hidden="true">
+        <div class="mock-window finder-window">
+          <div class="mw-bar"><i></i><i></i><i></i><span>Downloads</span></div>
+          <div class="files">
+            <div><span class="thumb t1"></span>Photo.heic</div>
+            <div><span class="thumb t2"></span>Brief.pdf</div>
+            <div><span class="thumb t3"></span>Logo.png</div>
+            <div><span class="thumb t4"></span>notes.txt</div>
+            <div><span class="thumb t5"></span>Deck.key</div>
+            <div><span class="thumb t6"></span>Song.m4a</div>
+          </div>
+        </div>
+        <div class="demo-notch"></div>
+        <div class="demo-island wide">
+          <div class="tiles">
+            <div class="tile"><span class="thumb t1"></span><span>Photo.heic</span></div>
+            <div class="tile pinned"><span class="thumb t2"></span><span>Brief.pdf</span></div>
+            <div class="tile"><span class="thumb t3"></span><span>Logo.png</span></div>
+            <div class="tile"><span class="thumb t4"></span><span>notes.txt</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Light & private -->
+    <section class="section" id="private">
+      <p class="eyebrow reveal">Light and private</p>
+      <h2 class="reveal">Feels like part of macOS.<br><span class="muted">Because it plays by its rules.</span></h2>
+      <div class="stats">
+        <div class="stat reveal"><b data-count="0" data-suffix="%">0%</b><span>CPU when idle</span></div>
+        <div class="stat reveal"><b data-count="22" data-suffix=" MB">22 MB</b><span>of memory at rest</span></div>
+        <div class="stat reveal"><b data-count="0" data-suffix="">0</b><span>trackers or analytics</span></div>
+        <div class="stat reveal"><b>Native</b><span>Swift, SwiftUI and AppKit</span></div>
+      </div>
+      <div class="bento small">
+        <article class="card reveal"><span class="tag green"><svg class="ico"><use href="#i-shield"/></svg>Sandboxed</span><p>Runs in the App Sandbox using only public APIs. Calendar, Reminders, Bluetooth and the camera are asked for only when you turn them on.</p></article>
+        <article class="card reveal"><span class="tag blue"><svg class="ico"><use href="#i-feather"/></svg>Event-driven</span><p>No polling, no busy loops. Animations run on Core Animation and stop when hidden or with Reduce Motion.</p></article>
+        <article class="card reveal"><span class="tag purple"><svg class="ico"><use href="#i-update"/></svg>Signed updates</span><p>Updates install themselves, and each one is checked against a signing key before it's trusted.</p></article>
+      </div>
+    </section>
+
+    <!-- Download & install -->
+    <section class="section" id="download">
+      <div class="download-card reveal">
+        <img src="assets/lintel-icon.png" alt="" width="96" height="96">
+        <h2>Get Lintel</h2>
+        <p class="muted">Free · <span data-version-full>Latest version</span> · macOS 14 or later</p>
+        <a class="btn btn-primary btn-large" href="https://github.com/Netesh5/lintel/releases/latest" data-download>
+          <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>
+          Download for Mac
+        </a>
+        <p class="fineprint"><span data-size></span>Universal: Apple silicon and Intel. <a href="https://github.com/Netesh5/lintel/releases">All releases</a></p>
+      </div>
+
+      <div class="install" id="install">
+        <h2 class="reveal">Install in a minute.</h2>
+        <ol class="steps-list">
+          <li class="reveal"><span class="num">1</span><div><b>Download and unzip</b><p>Open the downloaded <code>Lintel-<span data-version-num>0.1.1</span>.zip</code> to get <b>Lintel.app</b>.</p></div></li>
+          <li class="reveal"><span class="num">2</span><div><b>Move it to Applications</b><p>Drag <b>Lintel.app</b> into your <b>Applications</b> folder.</p></div></li>
+          <li class="reveal"><span class="num">3</span><div><b>Open it the first time</b><p>Lintel isn't notarized by Apple yet, so macOS asks once. Click <b>Done</b>, then open <b>System Settings › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</p>
+            <div class="settings-mock" aria-hidden="true">
+              <div class="sm-row"><span class="sm-lock"><svg class="ico"><use href="#i-shield"/></svg></span><span>"Lintel" was blocked to protect your Mac.</span><span class="sm-btn">Open Anyway</span></div>
+            </div>
+            <p class="aside">On macOS 14 you can instead right-click Lintel.app and choose <b>Open</b>.</p></div></li>
+          <li class="reveal"><span class="num">4</span><div><b>Say hello</b><p>The welcome guide lets you pick the extras you want. Lintel lives in the menu bar and around the notch — and keeps itself up to date.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <h2 class="reveal">Questions</h2>
+      <details class="reveal"><summary>Is Lintel free?</summary><p>Yes. Download it, use it, and get every update.</p></details>
+      <details class="reveal"><summary>My Mac doesn't have a notch. Does it work?</summary><p>Yes. On Macs and displays without a notch, Lintel floats as a small pill at the top centre of the screen, with the same activities.</p></details>
+      <details class="reveal"><summary>Why does macOS warn me the first time?</summary><p>Apps from outside the App Store need Apple's notarization to open without a prompt. Lintel isn't notarized yet, so macOS asks you once. After you allow it, updates install without asking.</p></details>
+      <details class="reveal"><summary>What does Lintel see of my data?</summary><p>Only what a feature needs, and only after you turn it on. Calendar and Reminders stay on your Mac. Claude Code status sees the step Claude is on — never your prompts or file contents. There are no analytics.</p></details>
+      <details class="reveal"><summary>How do I connect Claude Code?</summary><p>Nothing to do: if Claude Code is installed, Lintel connects when it starts and tells you once. New Claude Code sessions appear in the island. Turn it off in Settings › Activities › Claude Code.</p></details>
+      <details class="reveal"><summary>How do I uninstall it?</summary><p>If you use Claude Code, first turn off Claude Code in Lintel's Settings so it removes its hook. Then quit Lintel from the menu bar and move it to the Trash.</p></details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-brand"><img src="assets/lintel-icon.png" alt="" width="22" height="22"><span>Lintel</span></div>
+    <p>Made for the Mac. <a href="https://github.com/Netesh5/lintel/releases">Releases</a> · <a href="https://github.com/Netesh5/lintel">GitHub</a></p>
+    <p class="legal">Lintel is an independent app and isn't affiliated with or endorsed by Apple Inc. Mac, macOS, MacBook, AirDrop and Siri are trademarks of Apple Inc. Claude is a trademark of Anthropic.</p>
+  </footer>
+
+  <script src="app.js?v=839cc2f" defer></script>
+</body>
+</html>
