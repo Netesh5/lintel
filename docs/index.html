@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/lintel-icon.png">
-  <link rel="stylesheet" href="styles.css?v=6b3c12f">
+  <link rel="stylesheet" href="styles.css?v=213aa66">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -216,10 +216,51 @@
             <p>Open the island for graphs of CPU, memory and network, battery health, your local IP address and a speed test — one tap away from any activity. The notch stays clear until something is busy, and you get a heads-up when the CPU stays busy, memory runs short or the disk is nearly full.</p>
           </div>
         </article>
+
+        <article class="card c-wide reveal">
+          <div class="card-text">
+            <span class="tag red"><svg class="ico"><use href="#i-calendar"/></svg>Today</span>
+            <h3>Nothing on? Here's your day.</h3>
+            <p>Open the island when nothing's live to see the date, your next meeting and the weather where you are. Only a rough location is used, and only if you turn the weather on.</p>
+          </div>
+          <div class="mini-today" aria-hidden="true">
+            <div class="mt-head"><b>Friday</b><span>13 November</span></div>
+            <div class="mt-row"><span class="mt-dot"></span><div><b>Design review</b><span>13:30 · in 25 min</span></div></div>
+            <div class="mt-row"><svg class="mt-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="currentColor" stroke="none"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/></svg><div><b>18° Partly cloudy</b><span>H 21°  L 12°</span></div></div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <span class="tag teal"><svg class="ico"><use href="#i-clipboard"/></svg>Clipboard history</span>
+          <h3>Copy it again.</h3>
+          <p>Press <kbd>⌃</kbd><kbd>⌥</kbd><kbd>V</kbd> for the last 12 things you copied. Kept in memory only; passwords are never recorded.</p>
+          <div class="mini-clips" aria-hidden="true">
+            <span><i>≡</i>brew install --cask netesh5/tap/lintel</span>
+            <span><i>⌘</i>https://netesh5.github.io/lintel</span>
+            <span><i>▤</i>Quarterly report.pdf</span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <span class="tag blue"><svg class="ico"><use href="#i-display"/></svg>Full screen</span>
+          <h3>Out of the way when it should be.</h3>
+          <p>Watching a video, presenting or gaming full screen? The island steps aside, and comes back when you're done. Anything urgent still gets through.</p>
+        </article>
+
+        <article class="card c-wide reveal">
+          <div class="card-text">
+            <span class="tag purple"><svg class="ico"><use href="#i-sparkle"/></svg>Make it yours</span>
+            <h3>Your island, your way.</h3>
+            <p>An outline in your colour, a soft glow in the album's colour while music plays, size presets, and your pick of what shows beside the camera.</p>
+          </div>
+          <div class="mini-styles" aria-hidden="true">
+            <span class="ms-island ms-glow"><i>♪</i><em><b></b><b></b><b></b><b></b></em></span>
+            <span class="ms-island ms-outline"><i>✦</i><em>2:41</em></span>
+          </div>
+        </article>
       </div>
 
       <div class="chips reveal" aria-label="More features">
-        <span class="chip"><svg class="ico"><use href="#i-calendar"/></svg>Today &amp; weather</span>
         <span class="chip"><svg class="ico"><use href="#i-tray"/></svg>Screenshots to the shelf</span>
         <span class="chip"><svg class="ico"><use href="#i-battery"/></svg>Charging &amp; battery</span>
         <span class="chip"><svg class="ico"><use href="#i-download"/></svg>Download progress</span>
@@ -227,9 +268,7 @@
         <span class="chip"><svg class="ico"><use href="#i-camera"/></svg>Camera mirror</span>
         <span class="chip"><svg class="ico"><use href="#i-wifi"/></svg>Network &amp; VPN</span>
         <span class="chip"><svg class="ico"><use href="#i-bell"/></svg>Notifications</span>
-        <span class="chip"><svg class="ico"><use href="#i-clipboard"/></svg>Clipboard history</span>
-        <span class="chip"><svg class="ico"><use href="#i-display"/></svg>Hides in full screen</span>
-        <span class="chip"><svg class="ico"><use href="#i-sparkle"/></svg>Outline &amp; music glow</span>
+        <span class="chip"><svg class="ico"><use href="#i-clipboard"/></svg>Copied notices</span>
         <span class="chip"><svg class="ico"><use href="#i-command"/></svg>Siri &amp; Shortcuts</span>
         <span class="chip"><svg class="ico"><use href="#i-display"/></svg>Works without a notch</span>
         <span class="chip"><svg class="ico"><use href="#i-access"/></svg>VoiceOver &amp; Reduce Motion</span>
@@ -378,7 +417,7 @@
     <p class="legal">Lintel is an independent app and isn't affiliated with or endorsed by Apple Inc. Mac, macOS, MacBook, AirDrop and Siri are trademarks of Apple Inc. Claude is a trademark of Anthropic.</p>
   </footer>
 
-  <script src="app.js?v=6b3c12f" defer></script>
+  <script src="app.js?v=213aa66" defer></script>
   <!-- Visit counts without cookies or personal data: https://neteshpaudel.goatcounter.com -->
   <script data-goatcounter="https://neteshpaudel.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

@@ -332,6 +332,28 @@ h3 { margin: 12px 0 8px; font-size: 24px; line-height: 1.15; letter-spacing: -0.
 .mini-note { margin-top: 26px; padding: 14px 16px; border-radius: 18px; background: #000; border: 1px solid #222; }
 .mini-note b { display: block; font-size: 15px; }
 .mini-note span { color: var(--muted); font-size: 13px; }
+/* Today, clipboard history and personalisation cards */
+.tag.red { color: #ff6961; }
+.mini-today { flex: none; width: 230px; padding: 14px 16px; border-radius: 20px; background: #000; border: 1px solid #222; display: grid; gap: 10px; }
+.mini-today .mt-head b { font-size: 15px; display: block; }
+.mini-today .mt-head span, .mini-today .mt-row span { font-size: 12px; color: var(--muted); display: block; }
+.mini-today .mt-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 12px; background: rgba(255, 255, 255, 0.07); }
+.mini-today .mt-row b { font-size: 13px; display: block; }
+.mt-dot { width: 10px; height: 10px; border-radius: 3px; background: #ff6961; flex: none; }
+.mt-sun { width: 18px; height: 18px; color: #ffd60a; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; flex: none; }
+.mini-clips { margin-top: 20px; display: grid; gap: 6px; padding: 10px; border-radius: 16px; background: #000; border: 1px solid #222; }
+.mini-clips span { display: flex; gap: 10px; align-items: center; font-size: 12.5px; color: rgba(245, 245, 247, 0.85); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mini-clips i { font-style: normal; color: var(--muted); width: 14px; text-align: center; flex: none; }
+.mini-styles { flex: none; display: grid; gap: 16px; padding: 8px 4px; }
+.ms-island { width: 200px; height: 40px; border-radius: 0 0 16px 16px; background: #000; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; font: 600 14px/1 var(--font); }
+.ms-island i { font-style: normal; }
+.ms-glow { color: #ff7aa2; box-shadow: 0 0 22px rgba(255, 110, 160, 0.55); }
+.ms-glow em { display: flex; gap: 3px; align-items: center; }
+.ms-glow em b { width: 3px; height: 12px; border-radius: 2px; background: #ff7aa2; animation: miniWave 0.9s ease-in-out infinite alternate; }
+@keyframes miniWave { from { height: 4px; } to { height: 14px; } }
+.ms-glow em b:nth-child(2) { animation-delay: -0.3s; } .ms-glow em b:nth-child(3) { animation-delay: -0.6s; } .ms-glow em b:nth-child(4) { animation-delay: -0.15s; }
+.ms-outline { color: #c38bff; border: 1px solid #b07aff; border-top: none; }
+.ms-outline em { font-style: normal; font-variant-numeric: tabular-nums; }
 .days { margin-top: 18px; display: flex; align-items: baseline; gap: 8px; }
 .days b { font-size: 64px; line-height: 1; letter-spacing: -0.05em; background: linear-gradient(#e2b6ff, var(--purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .days span { color: var(--muted); }
