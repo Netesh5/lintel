@@ -3,6 +3,25 @@
     <channel>
         <title>Lintel</title>
         <item>
+            <title>0.1.5</title>
+            <pubDate>Fri, 13 Nov 2026 13:53:29 +0545</pubDate>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>0.1.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="plain-text"><![CDATA[Stays out of the way
+- The island steps aside while a video, presentation or game is full screen, and comes back when you leave. Notices still appear. Turn it off in Settings › Island.
+
+Clipboard history
+- Press ⌃⌥V to see the last 12 things you copied, and click one to copy it again. Kept in memory only, never saved; passwords are never recorded. Turn it on in Settings › Activities › Clipboard.
+
+Make it yours
+- An outline around the island, in a colour you choose.
+- A soft glow in the album's colour while music plays.
+- Size presets, and a choice of what shows beside the camera when several things are live.
+]]></description>
+            <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.5/Lintel-0.1.5.zip" length="3970263" type="application/octet-stream" sparkle:edSignature="gWaNrohVtIcb7jGQK8E4nhk8YoI7/VTAenFy0PGZT7BdydTCjQ/lcC5niLCDeIoJUC4T0uN++PV+oHir/FkEAg=="/>
+        </item>
+        <item>
             <title>0.1.4</title>
             <pubDate>Fri, 13 Nov 2026 13:14:39 +0545</pubDate>
             <sparkle:version>5</sparkle:version>
@@ -31,22 +50,6 @@ Fixes
 - The mirror no longer stays black the first time you open it.
 ]]></description>
             <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.3/Lintel-0.1.3.zip" length="3754101" type="application/octet-stream" sparkle:edSignature="K5Mw3QsgtYQv2chZlZ6b3ZvPCUETyBuqi5d5F4Qveu4Y5LAgt4DQhaYTsLG+HgcufUNsUt1DINXFXLjkAkIBBw=="/>
-        </item>
-        <item>
-            <title>0.1.2</title>
-            <pubDate>Fri, 06 Nov 2026 21:54:04 +0545</pubDate>
-            <sparkle:version>3</sparkle:version>
-            <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="plain-text"><![CDATA[Claude Code, clearer
-- The expanded island now shows Claude's last few steps on their own full-width lines, so nothing is cut off.
-- Each Claude session in the list names its project.
-- A Claude timer no longer keeps running after you interrupt Claude, or when a turn ends on an error. Lintel now tells you why it stopped, for example "rate limit reached".
-
-Lighter
-- The working spinner uses about a tenth of the CPU it did.
-]]></description>
-            <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.2/Lintel-0.1.2.zip" length="3594687" type="application/octet-stream" sparkle:edSignature="3JEeBCL0D7OgsW5ZpKqLh3i42jBTn/P2P1Ju/PnBikPW45jvNIqKdI8rBGvnWUVjY/OQGllNfNY/3oesDyn1Cg=="/>
         </item>
     </channel>
 </rss>
