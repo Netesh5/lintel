@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>What's new — Lintel</title>
+  <meta name="description" content="Every Lintel release and what changed in it.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://netesh5.github.io/lintel/changelog.html">
+  <meta property="og:title" content="What's new in Lintel">
+  <meta property="og:image" content="https://netesh5.github.io/lintel/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css?v=4411cd4">
+</head>
+<body>
+  <header class="nav scrolled" id="nav">
+    <a class="brand" href="./"><img src="assets/lintel-icon.png" alt="" width="28" height="28"><span>Lintel</span></a>
+    <a class="btn btn-small btn-primary" href="https://github.com/Netesh5/lintel/releases/latest" data-goatcounter-click="download-changelog">Download</a>
+  </header>
+  <main class="changelog">
+    <p class="eyebrow">Changelog</p>
+    <h1>What's new.</h1>
+    <p class="muted">Lintel updates itself; here's what each version brought.</p>
+    
+    <article class="cl-entry reveal" id="v0.1.6">
+      <header><h2>Lintel 0.1.6 <span class="cl-latest">Latest</span></h2><time datetime="2026-11-13">13 November 2026</time></header>
+      <h3>Polish</h3>
+<ul>
+<li>The welcome guide covers Claude Code status and Today, and lets you turn on the weather, the System Monitor and clipboard history from the start.</li>
+<li>VoiceOver reads Today and the clipboard history more clearly, and announces when you copy an item again.</li>
+<li>Tested for 40 minutes with every feature running at once: no leaks, steady memory.</li>
+</ul>
+    </article>
+    <article class="cl-entry reveal" id="v0.1.5">
+      <header><h2>Lintel 0.1.5</h2><time datetime="2026-11-13">13 November 2026</time></header>
+      <h3>Stays out of the way</h3>
+<ul>
+<li>The island steps aside while a video, presentation or game is full screen, and comes back when you leave. Notices still appear. Turn it off in Settings › Island.</li>
+</ul>
+<h3>Clipboard history</h3>
+<ul>
+<li>Press ⌃⌥V to see the last 12 things you copied, and click one to copy it again. Kept in memory only, never saved; passwords are never recorded. Turn it on in Settings › Activities › Clipboard.</li>
+</ul>
+<h3>Make it yours</h3>
+<ul>
+<li>An outline around the island, in a colour you choose.</li>
+<li>A soft glow in the album&#x27;s colour while music plays.</li>
+<li>Size presets, and a choice of what shows beside the camera when several things are live.</li>
+</ul>
+    </article>
+    <article class="cl-entry reveal" id="v0.1.4">
+      <header><h2>Lintel 0.1.4</h2><time datetime="2026-11-13">13 November 2026</time></header>
+      <h3>Today</h3>
+<ul>
+<li>Open the island with nothing playing to see the date, your next event and, if you turn it on, the weather where you are. Turn on the weather in Settings › Activities › Today.</li>
+</ul>
+<h3>Screenshots to the shelf</h3>
+<ul>
+<li>New screenshots and screen recordings can land on the shelf by themselves, ready to drag into any app or AirDrop. Turn it on in Settings › Activities › Shelf and choose your screenshots folder (usually the Desktop).</li>
+</ul>
+    </article>
+    <article class="cl-entry reveal" id="v0.1.3">
+      <header><h2>Lintel 0.1.3</h2><time datetime="2026-11-13">13 November 2026</time></header>
+      <h3>System Monitor</h3>
+<ul>
+<li>CPU, memory, network, battery health and disk in the island, with graphs of the last few minutes, your local IP address and a speed test. Turn it on in Settings › Activities.</li>
+<li>Quiet by default: the notch stays clear until the CPU stays busy, memory runs short or a big download runs. Open the island, or press the gauge button from any activity, to see the panel.</li>
+<li>Alerts when the CPU stays busy for two minutes, macOS runs short of memory, or the disk is nearly full.</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li>The mirror no longer stays black the first time you open it.</li>
+</ul>
+    </article>
+    <article class="cl-entry reveal" id="v0.1.2">
+      <header><h2>Lintel 0.1.2</h2><time datetime="2026-11-06">6 November 2026</time></header>
+      <h3>Claude Code, clearer</h3>
+<ul>
+<li>The expanded island now shows Claude&#x27;s last few steps on their own full-width lines, so nothing is cut off.</li>
+<li>Each Claude session in the list names its project.</li>
+<li>A Claude timer no longer keeps running after you interrupt Claude, or when a turn ends on an error. Lintel now tells you why it stopped, for example &quot;rate limit reached&quot;.</li>
+</ul>
+<h3>Lighter</h3>
+<ul>
+<li>The working spinner uses about a tenth of the CPU it did.</li>
+</ul>
+    </article>
+    <article class="cl-entry reveal" id="v0.1.1">
+      <header><h2>Lintel 0.1.1</h2><time datetime="2026-11-06">6 November 2026</time></header>
+      <h3>Claude Code in the notch, and lighter on memory.</h3>
+<ul>
+<li>Claude Code status: while Claude Code works (Terminal, VS Code or the Claude app&#x27;s Code tab), the island shows the project, the current step and the time so far, tells you when Claude needs your input, and says when it&#x27;s done. It sets itself up automatically when Claude Code is installed; Lintel says so once, and you can turn it off with one click or in Settings.</li>
+<li>Script notifications (lintel://notify) are about 10 times faster.</li>
+<li>Fixed memory growth from frequent events, and at most 5 notifications now wait their turn, so a flood can&#x27;t pile up.</li>
+<li>The project folder is labelled clearly in Claude&#x27;s status, and other small fixes.</li>
+</ul>
+<h3>Not notarized yet: if macOS asks, open Lintel from System Settings › Privacy &amp; Security › Open Anyway.</h3>
+    </article>
+    <article class="cl-entry reveal" id="v0.1.0">
+      <header><h2>Lintel 0.1.0</h2><time datetime="2026-11-06">6 November 2026</time></header>
+      <h3>First public release of Lintel: live activities around your Mac&#x27;s notch.</h3>
+<ul>
+<li>Live activities beside the notch: timers and stopwatches, Pomodoro focus, Now Playing for Music and Spotify, charging and battery, downloads, volume, calendar meetings, countdowns to a date, reminders.</li>
+<li>A drag-and-drop shelf on the notch, with AirDrop, Quick Look, compress, convert, resize, combine into PDF, pinning, search and multi-select.</li>
+<li>A quick note anywhere with Control-Option-N.</li>
+<li>Network, VPN, Low Power Mode, unlock and Bluetooth notices.</li>
+<li>Siri, Shortcuts and Spotlight actions, and a lintel:// URL scheme for scripts.</li>
+<li>Updates itself.</li>
+</ul>
+<h3>Not notarized yet: the first time, open Lintel, click Done, then System Settings › Privacy &amp; Security › Open Anyway (on macOS 14, right-click Lintel.app › Open). Updates after that install without asking.</h3>
+    </article>
+    <p class="cl-back"><a href="./">← Back to Lintel</a></p>
+  </main>
+  <footer class="footer">
+    <p>Made for the Mac. <a href="./">Home</a> · <a href="https://github.com/Netesh5/lintel/releases">Releases</a></p>
+  </footer>
+  <script>document.querySelectorAll('.reveal').forEach(e => e.classList.add('in'));</script>
+  <script data-goatcounter="https://neteshpaudel.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

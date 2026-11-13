@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Lintel — Live activities around your Mac's notch</title>
-  <meta name="description" content="Lintel turns your Mac's notch into a living island: timers, music, Claude Code, a drag-and-drop shelf with AirDrop, quick notes, countdowns and more. Free for macOS 14 and later.">
+  <title>Lintel: Free Notch App for Mac — Live Activities &amp; Claude Code</title>
+  <meta name="description" content="Lintel is a free notch app for Mac, like the iPhone's Dynamic Island. It turns your MacBook's notch into a living island: timers, music, Claude Code status, a shelf with AirDrop, a system monitor, your day at a glance and clipboard history. Free for macOS 14 and later.">
   <meta name="theme-color" content="#000000">
-  <meta property="og:title" content="Lintel — Live activities around your Mac's notch">
-  <meta property="og:description" content="Timers, music, Claude Code, a drag-and-drop shelf with AirDrop, quick notes and more, right where you look.">
+  <meta property="og:title" content="Lintel: Free Notch App for Mac">
+  <meta property="og:description" content="Timers, music, Claude Code status, a shelf with AirDrop, a system monitor, your day at a glance and more, right where you look. Free for macOS.">
   <meta property="og:image" content="https://netesh5.github.io/lintel/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -16,9 +16,27 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://netesh5.github.io/lintel/assets/og-image.png">
   <meta property="og:type" content="website">
+  <link rel="canonical" href="https://netesh5.github.io/lintel/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Lintel",
+    "alternateName": "Lintel notch app for Mac",
+    "description": "A free notch app for Mac: timers, music, Claude Code status, a shelf with AirDrop, a system monitor, your day at a glance and clipboard history, around the MacBook's camera.",
+    "operatingSystem": "macOS 14 or later",
+    "applicationCategory": "UtilitiesApplication",
+    "url": "https://netesh5.github.io/lintel/",
+    "downloadUrl": "https://github.com/Netesh5/lintel/releases/latest",
+    "installUrl": "https://github.com/Netesh5/lintel/releases/latest",
+    "image": "https://netesh5.github.io/lintel/assets/og-image.png",
+    "screenshot": "https://netesh5.github.io/lintel/assets/og-image.png",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/lintel-icon.png">
-  <link rel="stylesheet" href="styles.css?v=a5706e5">
+  <link rel="stylesheet" href="styles.css?v=4411cd4">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -78,8 +96,9 @@
     <section class="hero">
       <div class="hero-glow" aria-hidden="true"></div>
       <img class="hero-icon reveal" src="assets/lintel-icon.png" alt="Lintel app icon" width="112" height="112">
+      <p class="eyebrow hero-eyebrow reveal">The free notch app for Mac</p>
       <h1 class="reveal">Your notch,<br><span class="gradient-text">alive.</span></h1>
-      <p class="lede reveal">Lintel turns the space around your Mac's camera into a living island. Timers, music, Claude Code, a drag-and-drop shelf with AirDrop and a quick note — right where you look.</p>
+      <p class="lede reveal">Lintel turns the space around your Mac's camera into a living island. Timers, music, Claude Code, a drag-and-drop shelf with AirDrop, your day at a glance — right where you look.</p>
       <div class="cta reveal">
         <a class="btn btn-primary btn-large" href="https://github.com/Netesh5/lintel/releases/latest" data-download data-goatcounter-click="download-hero" data-goatcounter-title="Download (hero)">
           <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>
@@ -113,6 +132,26 @@
                 <div class="progress"><div class="bar"><i></i></div><div class="times"><span>1:24</span><span>-2:31</span></div></div>
               </div>
               <div class="controls"><svg class="ico"><use href="#i-prev"/></svg><span class="play"><svg class="ico"><use href="#i-pause"/></svg></span><svg class="ico"><use href="#i-next"/></svg></div>
+            </div>
+
+            <!-- today: the empty island -->
+            <div class="i-panel p-today">
+              <div class="band"><span class="b-icon today"><svg class="ico"><use href="#i-calendar"/></svg></span><div><b>Friday</b><span>13 November</span></div><em class="t-time">09:41</em></div>
+              <div class="t-cards">
+                <div class="t-card"><span class="mt-dot"></span><div><b>Design review</b><span>13:30 · in 25 min</span></div></div>
+                <div class="t-card"><svg class="mt-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="currentColor" stroke="none"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/></svg><div><b>18° Partly cloudy</b><span>H 21°  L 12° · Lisbon</span></div></div>
+              </div>
+            </div>
+
+            <!-- clipboard history -->
+            <div class="i-panel p-clips">
+              <div class="band"><span class="b-icon clips"><svg class="ico"><use href="#i-clipboard"/></svg></span><div><b>Clipboard</b><span>4 items</span></div></div>
+              <div class="c-rows" id="c-rows">
+                <div><i>≡</i><span>brew install --cask netesh5/tap/lintel</span><em>now</em></div>
+                <div><i>⌘</i><span>https://netesh5.github.io/lintel/</span><em>3m</em></div>
+                <div><i>▤</i><span>Quarterly report.pdf</span><em>12m</em></div>
+                <div><i>≡</i><span>Meeting moved to 3pm, same room</span><em>1h</em></div>
+              </div>
             </div>
 
             <!-- system monitor expanded -->
@@ -382,7 +421,7 @@
           <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>
           Download for Mac
         </a>
-        <p class="fineprint"><span data-size></span>Universal: Apple silicon and Intel. <a href="https://github.com/Netesh5/lintel/releases">All releases</a></p>
+        <p class="fineprint"><span data-size></span>Universal: Apple silicon and Intel. <a href="changelog.html">What's new</a></p>
         <div class="brew">
           <span>Or with Homebrew</span>
           <code id="brew-cmd">brew install --cask netesh5/tap/lintel</code>
@@ -411,7 +450,9 @@
       <details class="reveal"><summary>Is Lintel free?</summary><p>Yes. Download it, use it, and get every update.</p></details>
       <details class="reveal"><summary>My Mac doesn't have a notch. Does it work?</summary><p>Yes. On Macs and displays without a notch, Lintel floats as a small pill at the top centre of the screen, with the same activities.</p></details>
       <details class="reveal"><summary>Why does macOS warn me the first time?</summary><p>Apps from outside the App Store need Apple's notarization to open without a prompt. Lintel isn't notarized yet, so macOS asks you once. After you allow it, updates install without asking.</p></details>
-      <details class="reveal"><summary>What does Lintel see of my data?</summary><p>Only what a feature needs, and only after you turn it on. Calendar and Reminders stay on your Mac. Claude Code status sees the step Claude is on — never your prompts or file contents. The app has no analytics. This website counts visits and download clicks with <a href="https://www.goatcounter.com">GoatCounter</a>, without cookies or anything that identifies you.</p></details>
+      <details class="reveal"><summary>What does Lintel see of my data?</summary><p>Only what a feature needs, and only after you turn it on. Calendar, Reminders and your clipboard history stay on your Mac. Claude Code status sees the step Claude is on — never your prompts or file contents. Two things go online, and only when you use them: the weather sends a rough location (about 1 km) to MET Norway, and the speed test, which you start yourself, talks to Cloudflare. The app has no analytics. This website counts visits and download clicks with <a href="https://www.goatcounter.com">GoatCounter</a>, without cookies or anything that identifies you.</p></details>
+      <details class="reveal"><summary>Is the clipboard history saved anywhere?</summary><p>No. It's kept in memory only: never written to disk, and gone when Lintel quits or you turn it off. Passwords from password managers are never recorded. It's off until you turn it on in Settings › Activities › Clipboard.</p></details>
+      <details class="reveal"><summary>Why did the island disappear?</summary><p>It steps aside while another app is full screen, like a video, a presentation or a game, and comes back when you leave full screen. Notices still appear. Turn this off in Settings › Island › Full screen.</p></details>
       <details class="reveal"><summary>How do I connect Claude Code?</summary><p>Nothing to do: if Claude Code is installed, Lintel connects when it starts and tells you once. New Claude Code sessions appear in the island. Turn it off in Settings › Activities › Claude Code.</p></details>
       <details class="reveal"><summary>How do I uninstall it?</summary><p>If you use Claude Code, first turn off Claude Code in Lintel's Settings so it removes its hook. Then quit Lintel from the menu bar and move it to the Trash, or, if you installed it with Homebrew, run <code>brew uninstall --cask lintel</code>.</p></details>
     </section>
@@ -419,11 +460,11 @@
 
   <footer class="footer">
     <div class="foot-brand"><img src="assets/lintel-icon.png" alt="" width="22" height="22"><span>Lintel</span></div>
-    <p>Made for the Mac. <a href="https://github.com/Netesh5/lintel/releases">Releases</a> · <a href="https://github.com/Netesh5/lintel">GitHub</a></p>
-    <p class="legal">Lintel is an independent app and isn't affiliated with or endorsed by Apple Inc. Mac, macOS, MacBook, AirDrop and Siri are trademarks of Apple Inc. Claude is a trademark of Anthropic.</p>
+    <p>Made for the Mac. <a href="changelog.html">What's new</a> · <a href="https://github.com/Netesh5/lintel/releases">Releases</a> · <a href="https://github.com/Netesh5/lintel">GitHub</a></p>
+    <p class="legal">Lintel is an independent app and isn't affiliated with or endorsed by Apple Inc. Mac, macOS, MacBook, AirDrop, Dynamic Island and Siri are trademarks of Apple Inc. Claude is a trademark of Anthropic.</p>
   </footer>
 
-  <script src="app.js?v=a5706e5" defer></script>
+  <script src="app.js?v=4411cd4" defer></script>
   <!-- Visit counts without cookies or personal data: https://neteshpaudel.goatcounter.com -->
   <script data-goatcounter="https://neteshpaudel.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

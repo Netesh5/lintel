@@ -175,6 +175,8 @@ h1 {
 .island[data-state="note"] { --iw: 470px; --ih: 176px; --ir: 34px; }
 .island[data-state="monitor-compact"] { --iw: 330px; --ih: 34px; --ir: 13px; }
 .island[data-state="monitor"] { --iw: 470px; --ih: 230px; --ir: 34px; }
+.island[data-state="today"] { --iw: 470px; --ih: 132px; --ir: 32px; }
+.island[data-state="clips"] { --iw: 470px; --ih: 178px; --ir: 34px; }
 
 .i-compact {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 20px 0 18px;
@@ -198,7 +200,26 @@ h1 {
 .island[data-state="banner"] .p-banner,
 .island[data-state="drop"] .p-drop,
 .island[data-state="note"] .p-note,
+.island[data-state="today"] .p-today,
+.island[data-state="clips"] .p-clips,
 .island[data-state="monitor"] .p-monitor { opacity: 1; transform: none; transition: opacity 0.4s 0.16s, transform 0.6s 0.1s var(--spring); }
+
+/* Today and clipboard history in the tour */
+.b-icon.today { background: rgba(255, 105, 97, 0.16); color: #ff6961; }
+.b-icon.clips { background: rgba(100, 210, 255, 0.14); color: var(--teal); }
+.p-today, .p-clips { text-align: left; }
+.p-today .band em { font-style: normal; color: rgba(255, 255, 255, 0.7); }
+.t-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.t-card { display: flex; align-items: center; gap: 10px; height: 54px; padding: 0 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.07); }
+.t-card b { display: block; font-size: 12.5px; white-space: nowrap; }
+.t-card span { display: block; font-size: 10.5px; color: rgba(255, 255, 255, 0.55); white-space: nowrap; }
+.c-rows { margin-top: 8px; display: grid; }
+.c-rows div { display: flex; align-items: center; gap: 10px; height: 26px; padding: 0 8px; border-radius: 8px; font-size: 12.5px; color: rgba(255, 255, 255, 0.9); transition: background 0.25s; }
+.c-rows i { font-style: normal; width: 14px; text-align: center; color: rgba(255, 255, 255, 0.5); }
+.c-rows span { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.c-rows em { font-style: normal; font-size: 10.5px; color: rgba(255, 255, 255, 0.45); }
+.c-rows div.hover { background: rgba(255, 255, 255, 0.09); }
+.c-rows div.copied em, .c-rows div.copied i { color: var(--green); }
 
 .band { display: flex; align-items: center; gap: 10px; min-height: 30px; margin-left: 4px; }
 .band b { display: block; font-size: 13.5px; font-weight: 600; letter-spacing: -0.01em; }
@@ -293,6 +314,7 @@ h1 {
 /* ---------- Sections ---------- */
 .section { max-width: 1080px; margin: 0 auto; padding: 110px 22px 20px; }
 .eyebrow { margin: 0 0 10px; color: var(--muted); font-weight: 600; font-size: 17px; }
+.hero-eyebrow { position: relative; margin: 26px 0 2px; font-size: 16px; letter-spacing: 0.01em; }
 h2 { margin: 0 0 46px; font-size: clamp(36px, 6vw, 60px); line-height: 1.06; font-weight: 700; letter-spacing: -0.04em; }
 h2 .muted, .muted { color: var(--muted); }
 h3 { margin: 12px 0 8px; font-size: 24px; line-height: 1.15; letter-spacing: -0.025em; }
@@ -465,6 +487,19 @@ summary::-webkit-details-marker { display: none; }
 summary::after { content: "+"; position: absolute; right: 4px; top: 18px; font-size: 26px; font-weight: 300; color: var(--muted); transition: transform 0.45s var(--spring); }
 details[open] summary::after { transform: rotate(45deg); }
 details p { margin: 0 0 22px; color: rgba(245, 245, 247, 0.72); }
+
+/* Changelog page (built from the release notes by scripts/changelog.py) */
+.changelog { max-width: 720px; margin: 0 auto; padding: 130px 22px 0; }
+.changelog h1 { margin: 0; font-size: clamp(44px, 7vw, 64px); letter-spacing: -0.04em; }
+.changelog > .muted { margin: 14px 0 50px; color: var(--muted); font-size: 19px; }
+.cl-entry { padding: 30px 0; border-top: 1px solid var(--line); }
+.cl-entry header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.cl-entry h2 { margin: 0; font-size: 26px; letter-spacing: -0.02em; }
+.cl-entry time { color: var(--muted); font-size: 15px; }
+.cl-entry h3 { margin: 20px 0 8px; font-size: 16px; color: var(--fg); }
+.cl-entry ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; color: rgba(245, 245, 247, 0.75); line-height: 1.5; }
+.cl-latest { margin-left: 8px; padding: 3px 9px; border-radius: 99px; font-size: 12px; font-weight: 600; vertical-align: middle; background: rgba(41, 151, 255, 0.16); color: var(--blue); }
+.cl-back { margin: 30px 0 0; }
 
 /* Footer */
 .footer { max-width: 1080px; margin: 110px auto 0; padding: 30px 22px 50px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }

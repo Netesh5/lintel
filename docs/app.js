@@ -115,6 +115,20 @@
   };
 
   const scenes = [
+    async () => { // today: open the island when nothing's live
+      // The visitor's own date and time, so the island agrees with the menu bar clock.
+      const now = new Date(), meeting = new Date(now.getTime() + 25 * 60_000);
+      const time = (d) => d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+      $(".p-today .band > div > b").textContent = now.toLocaleDateString([], { weekday: "long" });
+      $(".p-today .band > div > span").textContent = now.toLocaleDateString([], { day: "numeric", month: "long" });
+      $(".p-today .t-time").textContent = time(now);
+      $(".p-today .t-card > div > span").textContent = `${time(meeting)} · in 25 min`;
+      setState("idle");
+      say("Nothing on? Open the island to see your day.");
+      await hold(1100);
+      setState("today");
+      await hold(3600);
+    },
     async () => { // timer
       cIcon.setAttribute("href", "#i-timer");
       let s = 299;
@@ -215,6 +229,23 @@
         const t = performance.now() - start;
         speed.textContent = t > 3400 ? "↓ 312  ↑ 48 Mbps · 14 ms" : t > 1600 ? "Testing download…" : "Speed test";
       });
+    },
+    async () => { // clipboard history: ⌃⌥V, then copy an item again
+      const rows = $$("#c-rows div");
+      const report = rows[2];
+      rows.forEach((row) => { row.className = ""; });
+      report.querySelector("i").textContent = "▤";
+      report.querySelector("em").textContent = "12m";
+      setState("clips");
+      say("⌃⌥V shows what you copied. Click one to copy it again.");
+      await hold(1600);
+      report.classList.add("hover");
+      report.querySelector("em").textContent = "Copy";
+      await hold(900);
+      report.classList.add("copied");
+      report.querySelector("i").textContent = "✓";
+      report.querySelector("em").textContent = "Copied";
+      await hold(1600);
     },
     async () => { // quick note
       noteText.textContent = "";

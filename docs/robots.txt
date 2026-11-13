@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://netesh5.github.io/lintel/sitemap.xml
