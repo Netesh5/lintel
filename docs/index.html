@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/lintel-icon.png">
-  <link rel="stylesheet" href="styles.css?v=dd5c03d">
+  <link rel="stylesheet" href="styles.css?v=e83ac87">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -36,6 +36,7 @@
       <symbol id="i-command" viewBox="0 0 24 24"><path d="M9 9V6.5A2.5 2.5 0 1 0 6.5 9H9zm0 0h6m-6 0v6m6-6V6.5A2.5 2.5 0 1 1 17.5 9H15zm0 0v6m0 0h-6m6 0v2.5a2.5 2.5 0 1 0 2.5-2.5H15zm-6 0v2.5A2.5 2.5 0 1 1 6.5 15H9z"/></symbol>
       <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.4 3 8 7 9.5 4-1.5 7-5.1 7-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
       <symbol id="i-feather" viewBox="0 0 24 24"><path d="M19.5 4.5c-6 0-11.5 4-12.5 11l-3 4.5M7.5 14.5H13M9.5 10.5h6.5c.8-2 1.6-4 3.5-6"/></symbol>
+      <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4.5 16.5a8 8 0 1 1 15 0"/><path d="m12 13 4-4.5"/><circle cx="12" cy="13" r="1.2"/></symbol>
       <symbol id="i-tick" viewBox="0 0 24 24"><path d="m5.5 12.5 4.2 4.2 8.8-9.4"/></symbol>
       <symbol id="i-spin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5" stroke-dasharray="36 11.2"/></symbol>
       <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.8v5.2M12 16.3v.1"/></symbol>
@@ -194,6 +195,14 @@
           <h3>Today's list, ticked off.</h3>
           <p>Due and overdue reminders with checkboxes that complete them in Reminders.</p>
         </article>
+
+        <article class="card c-wide c-full reveal">
+          <div class="card-text">
+            <span class="tag blue"><svg class="ico"><use href="#i-gauge"/></svg>System Monitor</span>
+            <h3>Your Mac at a glance.</h3>
+            <p>Open the island for graphs of CPU, memory and network, battery health, your local IP address and a speed test — one tap away from any activity. The notch stays clear until something is busy, and you get a heads-up when the CPU stays busy, memory runs short or the disk is nearly full.</p>
+          </div>
+        </article>
       </div>
 
       <div class="chips reveal" aria-label="More features">
@@ -296,7 +305,7 @@
       </div>
       <div class="bento small">
         <article class="card reveal"><span class="tag green"><svg class="ico"><use href="#i-shield"/></svg>Sandboxed</span><p>Runs in the App Sandbox using only public APIs. Calendar, Reminders, Bluetooth and the camera are asked for only when you turn them on.</p></article>
-        <article class="card reveal"><span class="tag blue"><svg class="ico"><use href="#i-feather"/></svg>Event-driven</span><p>No polling, no busy loops. Animations run on Core Animation and stop when hidden or with Reduce Motion.</p></article>
+        <article class="card reveal"><span class="tag blue"><svg class="ico"><use href="#i-feather"/></svg>Event-driven</span><p>Lintel waits for macOS to report changes instead of polling; only the System Monitor, if you turn it on, takes a quick reading every few seconds. Animations run on Core Animation and stop when hidden or with Reduce Motion.</p></article>
         <article class="card reveal"><span class="tag purple"><svg class="ico"><use href="#i-update"/></svg>Signed updates</span><p>Updates install themselves, and each one is checked against a signing key before it's trusted.</p></article>
       </div>
     </section>
@@ -352,7 +361,7 @@
     <p class="legal">Lintel is an independent app and isn't affiliated with or endorsed by Apple Inc. Mac, macOS, MacBook, AirDrop and Siri are trademarks of Apple Inc. Claude is a trademark of Anthropic.</p>
   </footer>
 
-  <script src="app.js?v=dd5c03d" defer></script>
+  <script src="app.js?v=e83ac87" defer></script>
   <!-- Visit counts without cookies or personal data: https://neteshpaudel.goatcounter.com -->
   <script data-goatcounter="https://neteshpaudel.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

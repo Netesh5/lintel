@@ -286,6 +286,7 @@ h3 { margin: 12px 0 8px; font-size: 24px; line-height: 1.15; letter-spacing: -0.
 .c-wide { grid-column: span 2; display: flex; align-items: center; gap: 24px; }
 .c-wide .card-text { flex: 1; }
 .c-tall { grid-row: span 2; }
+.c-full { grid-column: 1 / -1; }
 .tag { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; }
 .tag .ico { width: 17px; height: 17px; }
 .tag.orange { color: var(--orange); } .tag.pink { color: #ff6f91; } .tag.blue { color: var(--blue); }
