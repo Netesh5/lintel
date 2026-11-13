@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/lintel-icon.png">
-  <link rel="stylesheet" href="styles.css?v=e83ac87">
+  <link rel="stylesheet" href="styles.css?v=b7725a3">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -36,6 +36,7 @@
       <symbol id="i-command" viewBox="0 0 24 24"><path d="M9 9V6.5A2.5 2.5 0 1 0 6.5 9H9zm0 0h6m-6 0v6m6-6V6.5A2.5 2.5 0 1 1 17.5 9H15zm0 0v6m0 0h-6m6 0v2.5a2.5 2.5 0 1 0 2.5-2.5H15zm-6 0v2.5A2.5 2.5 0 1 1 6.5 15H9z"/></symbol>
       <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.4 3 8 7 9.5 4-1.5 7-5.1 7-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
       <symbol id="i-feather" viewBox="0 0 24 24"><path d="M19.5 4.5c-6 0-11.5 4-12.5 11l-3 4.5M7.5 14.5H13M9.5 10.5h6.5c.8-2 1.6-4 3.5-6"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"/></symbol>
       <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4.5 16.5a8 8 0 1 1 15 0"/><path d="m12 13 4-4.5"/><circle cx="12" cy="13" r="1.2"/></symbol>
       <symbol id="i-tick" viewBox="0 0 24 24"><path d="m5.5 12.5 4.2 4.2 8.8-9.4"/></symbol>
       <symbol id="i-spin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5" stroke-dasharray="36 11.2"/></symbol>
@@ -106,6 +107,18 @@
                 <div class="progress"><div class="bar"><i></i></div><div class="times"><span>1:24</span><span>-2:31</span></div></div>
               </div>
               <div class="controls"><svg class="ico"><use href="#i-prev"/></svg><span class="play"><svg class="ico"><use href="#i-pause"/></svg></span><svg class="ico"><use href="#i-next"/></svg></div>
+            </div>
+
+            <!-- system monitor expanded -->
+            <div class="i-panel p-monitor">
+              <div class="band"><span class="b-icon cpu"><svg class="ico"><use href="#i-cpu"/></svg></span><div><b>System</b><span>Up 2d 11h</span></div></div>
+              <div class="m-grid">
+                <div class="m-tile"><span class="m-label">CPU</span><b id="m-cpu">92%</b><svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polygon class="fill green" id="m-cpu-fill"/><polyline class="line green" id="m-cpu-line"/></svg></div>
+                <div class="m-tile"><span class="m-label">Memory</span><b id="m-mem">10.4 GB of 16 GB</b><svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polygon class="fill blue" id="m-mem-fill"/><polyline class="line blue" id="m-mem-line"/></svg></div>
+                <div class="m-tile"><span class="m-label">Network <em id="m-up">↑ 84 KB/s</em></span><b id="m-down">↓ 2.4 MB/s</b><svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polygon class="fill teal" id="m-net-fill"/><polyline class="line teal" id="m-net-line"/></svg></div>
+                <div class="m-tile"><span class="m-label">Battery <em>Using 9.2 W</em></span><b>82%</b><span class="m-foot">Health 96% · 214 cycles</span><span class="m-bar"><i></i></span></div>
+              </div>
+              <div class="m-footer"><span>192.168.1.24 · 412 GB free</span><span class="m-speed" id="m-speed">Speed test</span></div>
             </div>
 
             <!-- claude expanded -->
@@ -361,7 +374,7 @@
     <p class="legal">Lintel is an independent app and isn't affiliated with or endorsed by Apple Inc. Mac, macOS, MacBook, AirDrop and Siri are trademarks of Apple Inc. Claude is a trademark of Anthropic.</p>
   </footer>
 
-  <script src="app.js?v=e83ac87" defer></script>
+  <script src="app.js?v=b7725a3" defer></script>
   <!-- Visit counts without cookies or personal data: https://neteshpaudel.goatcounter.com -->
   <script data-goatcounter="https://neteshpaudel.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

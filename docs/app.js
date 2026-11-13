@@ -175,6 +175,47 @@
       say("…and tells you the moment it's done.");
       await hold(3000);
     },
+    async () => { // system monitor: quiet until something's busy, then the panel
+      const speed = $("#m-speed");
+      speed.textContent = "Speed test";
+      setState("idle");
+      say("The System Monitor keeps the notch clear…");
+      await hold(1700);
+      cIcon.setAttribute("href", "#i-cpu");
+      cStatus.textContent = "92%";
+      setState("monitor-compact");
+      say("…until something's busy.");
+      await hold(2000, 500, () => { cStatus.textContent = `${88 + Math.round(Math.random() * 8)}%`; });
+
+      const series = {
+        cpu: Array.from({ length: 30 }, (_, i) => 0.35 + 0.5 * (i / 29) + Math.random() * 0.08),
+        mem: Array.from({ length: 30 }, () => 0.62 + Math.random() * 0.03),
+        net: Array.from({ length: 30 }, (_, i) => 0.15 + 0.6 * Math.abs(Math.sin(i / 4)) * Math.random()),
+      };
+      const draw = (name, values) => {
+        const points = values.map((v, i) => `${(i * 100 / (values.length - 1)).toFixed(1)},${(30 - Math.min(1, v) * 27).toFixed(1)}`);
+        $(`#m-${name}-line`).setAttribute("points", points.join(" "));
+        $(`#m-${name}-fill`).setAttribute("points", `${points.join(" ")} 100,30 0,30`);
+      };
+      const step = () => {
+        series.cpu.push(Math.min(0.98, 0.84 + Math.random() * 0.12)); series.cpu.shift();
+        series.mem.push(0.63 + Math.random() * 0.02); series.mem.shift();
+        series.net.push(0.2 + Math.random() * 0.75); series.net.shift();
+        Object.entries(series).forEach(([name, values]) => draw(name, values));
+        $("#m-cpu").textContent = `${Math.round(series.cpu.at(-1) * 100)}%`;
+        $("#m-down").textContent = `↓ ${(series.net.at(-1) * 3.2).toFixed(1)} MB/s`;
+        $("#m-up").textContent = `↑ ${40 + Math.round(Math.random() * 80)} KB/s`;
+      };
+      Object.entries(series).forEach(([name, values]) => draw(name, values));
+      setState("monitor");
+      say("Open it for live graphs, battery health and a speed test.");
+      const start = performance.now();
+      await hold(5600, 500, () => {
+        step();
+        const t = performance.now() - start;
+        speed.textContent = t > 3400 ? "↓ 312  ↑ 48 Mbps · 14 ms" : t > 1600 ? "Testing download…" : "Speed test";
+      });
+    },
     async () => { // quick note
       noteText.textContent = "";
       setState("note");

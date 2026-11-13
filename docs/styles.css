@@ -173,6 +173,8 @@ h1 {
 .island[data-state="banner"] { --iw: 430px; --ih: 108px; --ir: 32px; }
 .island[data-state="drop"] { --iw: 520px; --ih: 148px; --ir: 34px; }
 .island[data-state="note"] { --iw: 470px; --ih: 176px; --ir: 34px; }
+.island[data-state="monitor-compact"] { --iw: 330px; --ih: 34px; --ir: 13px; }
+.island[data-state="monitor"] { --iw: 470px; --ih: 230px; --ir: 34px; }
 
 .i-compact {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 20px 0 18px;
@@ -180,7 +182,8 @@ h1 {
   opacity: 0; transition: opacity 0.25s;
 }
 .island[data-state="timer"] .i-compact, .island[data-state="claude-compact"] .i-compact,
-.island[data-state="shelf-compact"] .i-compact { opacity: 1; transition: opacity 0.35s 0.18s; }
+.island[data-state="shelf-compact"] .i-compact, .island[data-state="monitor-compact"] .i-compact { opacity: 1; transition: opacity 0.35s 0.18s; }
+.island[data-state="monitor-compact"] .c-left, .island[data-state="monitor-compact"] .c-right { color: var(--orange); }
 .island[data-state="shelf-compact"] .c-left, .island[data-state="shelf-compact"] .c-right { color: var(--teal); }
 .c-left .ico { width: 18px; height: 18px; }
 .island[data-state="timer"] .c-left, .island[data-state="timer"] .c-right { color: var(--orange); }
@@ -194,7 +197,8 @@ h1 {
 .island[data-state="claude"] .p-claude,
 .island[data-state="banner"] .p-banner,
 .island[data-state="drop"] .p-drop,
-.island[data-state="note"] .p-note { opacity: 1; transform: none; transition: opacity 0.4s 0.16s, transform 0.6s 0.1s var(--spring); }
+.island[data-state="note"] .p-note,
+.island[data-state="monitor"] .p-monitor { opacity: 1; transform: none; transition: opacity 0.4s 0.16s, transform 0.6s 0.1s var(--spring); }
 
 .band { display: flex; align-items: center; gap: 10px; min-height: 30px; margin-left: 4px; }
 .band b { display: block; font-size: 13.5px; font-weight: 600; letter-spacing: -0.01em; }
@@ -207,6 +211,26 @@ h1 {
 .b-icon.note { background: rgba(255, 214, 10, 0.16); color: var(--yellow); }
 
 .p-music .band { justify-content: center; text-align: center; padding-left: 0; }
+/* System monitor panel: a 2 × 2 grid of tiles with live graphs, as the app shows it. */
+.b-icon.cpu { background: rgba(48, 209, 88, 0.16); color: var(--green); }
+.p-monitor { text-align: left; }
+.m-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+.m-tile { position: relative; height: 63px; border-radius: 11px; background: rgba(255, 255, 255, 0.07); padding: 7px 10px; overflow: hidden; }
+.m-label { display: flex; justify-content: space-between; font-size: 10px; font-weight: 600; color: rgba(255, 255, 255, 0.55); }
+.m-label em { font-style: normal; font-weight: 500; color: rgba(255, 255, 255, 0.7); font-variant-numeric: tabular-nums; }
+.m-tile b { display: block; font-size: 13px; line-height: 1.3; font-weight: 600; font-variant-numeric: tabular-nums; margin-top: 1px; }
+.m-foot { display: block; font-size: 9.5px; line-height: 1.3; color: rgba(255, 255, 255, 0.55); }
+.m-bar { position: absolute; left: 10px; right: 10px; bottom: 5px; height: 3px; border-radius: 2px; background: rgba(255, 255, 255, 0.12); }
+.m-bar i { position: absolute; inset: 0 18% 0 0; border-radius: 2px; background: var(--green); }
+.spark { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 18px; }
+.spark .line { fill: none; stroke-width: 1.4; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.spark .fill { stroke: none; opacity: 0.28; }
+.spark .green { stroke: var(--green); fill: var(--green); } .spark .line.green { fill: none; }
+.spark .blue { stroke: var(--blue); fill: var(--blue); } .spark .line.blue { fill: none; }
+.spark .teal { stroke: var(--teal); fill: var(--teal); } .spark .line.teal { fill: none; }
+.m-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 10.5px; color: rgba(255, 255, 255, 0.6); }
+.m-speed { padding: 3px 9px; border-radius: 99px; background: rgba(255, 255, 255, 0.12); color: rgba(255, 255, 255, 0.9); font-variant-numeric: tabular-nums; }
+
 .music-row { display: flex; gap: 14px; align-items: center; margin-top: 12px; }
 .art { width: 52px; height: 52px; border-radius: 12px; flex: none; background: conic-gradient(from 210deg, #ff5f8f, #ffb36b, #7b6bff, #ff5f8f); }
 .progress { flex: 1; }
