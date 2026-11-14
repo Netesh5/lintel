@@ -3,6 +3,16 @@
     <channel>
         <title>Lintel</title>
         <item>
+            <title>0.1.7</title>
+            <pubDate>Sat, 14 Nov 2026 08:38:05 +0545</pubDate>
+            <sparkle:version>8</sparkle:version>
+            <sparkle:shortVersionString>0.1.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="plain-text"><![CDATA[Keyboard shortcuts that work from any app: ⌃⌥T opens New Timer and ⌃⌥M opens or closes the mirror. Settings has a new Keyboard shortcuts section with a switch for each. Fixed: ⌃⌥N didn't open the quick note while clipboard history was on. Fixed: with the quick note open, its buttons could slide under the camera; copy and clear now sit in the note's corner.
+]]></description>
+            <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.7/Lintel-0.1.7.zip" length="3999736" type="application/octet-stream" sparkle:edSignature="pXgsu9QF61C0mbkMQtAvI8sLFhohYzhISwuJxlzmiNpj3j+guY9nIjdSXbrFq4OZjB+awJOHfT5ls8VLckMqBw=="/>
+        </item>
+        <item>
             <title>0.1.6</title>
             <pubDate>Fri, 13 Nov 2026 15:51:04 +0545</pubDate>
             <sparkle:version>7</sparkle:version>
@@ -33,20 +43,6 @@ Make it yours
 - Size presets, and a choice of what shows beside the camera when several things are live.
 ]]></description>
             <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.5/Lintel-0.1.5.zip" length="3970263" type="application/octet-stream" sparkle:edSignature="gWaNrohVtIcb7jGQK8E4nhk8YoI7/VTAenFy0PGZT7BdydTCjQ/lcC5niLCDeIoJUC4T0uN++PV+oHir/FkEAg=="/>
-        </item>
-        <item>
-            <title>0.1.4</title>
-            <pubDate>Fri, 13 Nov 2026 13:14:39 +0545</pubDate>
-            <sparkle:version>5</sparkle:version>
-            <sparkle:shortVersionString>0.1.4</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="plain-text"><![CDATA[Today
-- Open the island with nothing playing to see the date, your next event and, if you turn it on, the weather where you are. Turn on the weather in Settings › Activities › Today.
-
-Screenshots to the shelf
-- New screenshots and screen recordings can land on the shelf by themselves, ready to drag into any app or AirDrop. Turn it on in Settings › Activities › Shelf and choose your screenshots folder (usually the Desktop).
-]]></description>
-            <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.4/Lintel-0.1.4.zip" length="3878685" type="application/octet-stream" sparkle:edSignature="0Db3/GjzBqr7hgtu6+y9uLQbA94OjhkwENe3VH9ugoYabKWGu9GavLpPaBE01eYOKnLhHIf+UD8DCtTYbFJ0BQ=="/>
         </item>
     </channel>
 </rss>
