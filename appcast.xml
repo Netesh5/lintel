@@ -3,6 +3,16 @@
     <channel>
         <title>Lintel</title>
         <item>
+            <title>0.1.8</title>
+            <pubDate>Mon, 16 Nov 2026 21:09:32 +0545</pubDate>
+            <sparkle:version>9</sparkle:version>
+            <sparkle:shortVersionString>0.1.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="plain-text"><![CDATA[Fixed: the Open at login switch was greyed out on new installs and couldn't be turned on. New installs now start with Open at login and the System Monitor on; the welcome guide has a switch for each to turn them off. The monitor stays quiet until something's busy.
+]]></description>
+            <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.8/Lintel-0.1.8.zip" length="3999311" type="application/octet-stream" sparkle:edSignature="27VsusnEzOI91T1JSIEygg/qZTKBNnqxEbhaOq3gkaQV2nno0pT7cNppleU7Sw8L2VKCoiSqC89X6tDfLMG5Bg=="/>
+        </item>
+        <item>
             <title>0.1.7</title>
             <pubDate>Sat, 14 Nov 2026 08:38:05 +0545</pubDate>
             <sparkle:version>8</sparkle:version>
@@ -24,25 +34,6 @@
 - Tested for 40 minutes with every feature running at once: no leaks, steady memory.
 ]]></description>
             <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.6/Lintel-0.1.6.zip" length="3975877" type="application/octet-stream" sparkle:edSignature="bSlwlRUQd8DvEP23C087mZw58yAqCx5Df0/BhbFTU8Khf2Es/5kOS8sDo+5ZsE/1+SIpjGHtFVtL1ynvzj3kBA=="/>
-        </item>
-        <item>
-            <title>0.1.5</title>
-            <pubDate>Fri, 13 Nov 2026 13:53:29 +0545</pubDate>
-            <sparkle:version>6</sparkle:version>
-            <sparkle:shortVersionString>0.1.5</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="plain-text"><![CDATA[Stays out of the way
-- The island steps aside while a video, presentation or game is full screen, and comes back when you leave. Notices still appear. Turn it off in Settings › Island.
-
-Clipboard history
-- Press ⌃⌥V to see the last 12 things you copied, and click one to copy it again. Kept in memory only, never saved; passwords are never recorded. Turn it on in Settings › Activities › Clipboard.
-
-Make it yours
-- An outline around the island, in a colour you choose.
-- A soft glow in the album's colour while music plays.
-- Size presets, and a choice of what shows beside the camera when several things are live.
-]]></description>
-            <enclosure url="https://github.com/Netesh5/lintel/releases/download/v0.1.5/Lintel-0.1.5.zip" length="3970263" type="application/octet-stream" sparkle:edSignature="gWaNrohVtIcb7jGQK8E4nhk8YoI7/VTAenFy0PGZT7BdydTCjQ/lcC5niLCDeIoJUC4T0uN++PV+oHir/FkEAg=="/>
         </item>
     </channel>
 </rss>
